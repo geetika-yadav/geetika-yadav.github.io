@@ -37,6 +37,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .nav-cta{font-size:0.82rem;font-weight:500;color:var(--navy);border:1.5px solid var(--navy);padding:6px 18px;border-radius:4px;text-decoration:none;transition:background .2s,color .2s}
 .nav-cta:hover{background:var(--navy);color:var(--white)}
 
+/* ── PROFILE PHOTO ──────────────────────── */
+.hero-photo-wrap{margin-bottom:1.75rem}
+.hero-photo{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--white);box-shadow:0 0 0 3px var(--gold);display:block}
+.hero-photo-placeholder{width:96px;height:96px;border-radius:50%;background:var(--off);border:3px solid var(--white);box-shadow:0 0 0 3px var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy)}
+
 /* ── HERO ───────────────────────────────── */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem clamp(1.5rem,5vw,4rem) 5rem;gap:4rem;max-width:1200px;margin:0 auto}
 .hero-left{}
@@ -272,19 +277,20 @@ footer{background:#111823;padding:1.5rem clamp(1.5rem,5vw,4rem);display:flex;jus
     <li><a href="#work">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="Geetika_Yadav_Resume.pdf" download>Download CV</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
+    <div class="hero-photo-wrap reveal">
+      <!-- Replace with: <img class="hero-photo" src="profile.jpg" alt="Geetika Yadav"> -->
+      <div class="hero-photo-placeholder">GY</div>
+    </div>
     <div class="hero-eyebrow reveal">Communications Professional</div>
-    <h1 class="hero-name reveal reveal-delay-1">Geetika<br><em>Yadav</em></h1>
     <p class="hero-role reveal reveal-delay-1">Executive Communications &nbsp;·&nbsp; Content Strategy &nbsp;·&nbsp; Delhi NCR</p>
     <blockquote class="hero-tagline reveal reveal-delay-2">Ten years of turning organisational complexity into communication people actually read.</blockquote>
     <div class="hero-actions reveal reveal-delay-2">
       <a class="btn-primary" href="#work">View my work</a>
-      <a class="btn-secondary" href="Geetika_Yadav_Resume.pdf" download>Download CV</a>
     </div>
     <div class="hero-stats reveal reveal-delay-3">
       <div class="hero-stat">
@@ -676,11 +682,8 @@ footer{background:#111823;padding:1.5rem clamp(1.5rem,5vw,4rem);display:flex;jus
     <div class="contact-kicker">Get in touch</div>
     <h2 class="contact-title">Open to the right opportunity</h2>
     <p class="contact-sub">I am an immediate joiner based in Delhi NCR, available for hybrid or on-site roles in Gurugram and Central Delhi. Open to discussing communications, content strategy, executive comms, and employer branding roles.</p>
-    <div class="contact-actions">
-      <a class="cbtn primary" href="mailto:geetika.yadav@outlook.in">Send me an email</a>
-      <a class="cbtn ghost" href="Geetika_Yadav_Resume.pdf" download>Download CV</a>
-    </div>
-    <div class="contact-meta">
+    <div class="contact-meta" style="margin-top:0;">
+      <span style="color:var(--ice);font-size:0.88rem;font-weight:500;margin-right:0.5rem;">Contact:</span>
       <a href="mailto:geetika.yadav@outlook.in">geetika.yadav@outlook.in</a>
       <a href="tel:+919643288168">+91-9643288168</a>
       <a href="https://linkedin.com/in/geetika-yadav-6b2753170" target="_blank">LinkedIn</a>
