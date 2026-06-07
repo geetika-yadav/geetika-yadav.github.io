@@ -8,24 +8,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#1A1F2E;--ink-mid:#3D4A5C;--ink-muted:#6B7A8D;
-  --navy:#1B2A4A;--navy-mid:#243355;--sky:#3A6EA8;--sky-light:#EBF3FB;
-  --gold:#C8922A;--gold-bg:#FBF5EA;--white:#FFFFFF;--off:#F7F8FA;
-  --border:#E4E8EE;--green:#1F7A5C;--green-bg:#EAF5F0;
-}
+:root{--ink:#1A1F2E;--ink-mid:#3D4A5C;--ink-muted:#6B7A8D;--navy:#1B2A4A;--navy-mid:#243355;--sky:#3A6EA8;--sky-light:#EBF3FB;--gold:#C8922A;--gold-bg:#FBF5EA;--white:#FFFFFF;--off:#F7F8FA;--border:#E4E8EE;--green:#1F7A5C;--green-bg:#EAF5F0;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem)}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);letter-spacing:0.01em;text-decoration:none}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-muted);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--navy)}
-
-/* HERO */
+.nav-links a.active{color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem clamp(1.5rem,5vw,4rem) 5rem;gap:4rem;max-width:1200px;margin:0 auto}
 .hero-photo-wrap{margin-bottom:1.75rem}
 .hero-photo{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--white);box-shadow:0 0 0 3px var(--gold);display:block}
@@ -37,30 +29,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
 .btn-primary{background:var(--navy);color:var(--white);font-size:0.88rem;font-weight:500;padding:0.75rem 2rem;border-radius:4px;text-decoration:none;letter-spacing:0.03em;transition:background .2s,transform .15s}
 .btn-primary:hover{background:#243355;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--navy);font-size:0.88rem;font-weight:500;padding:0.73rem 2rem;border-radius:4px;border:1.5px solid var(--border);text-decoration:none;transition:border-color .2s,transform .15s}
+.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .hero-stat{background:var(--white);padding:1rem 1.25rem}
 .hero-stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--navy);line-height:1}
 .hero-stat-label{font-size:0.72rem;color:var(--ink-muted);margin-top:3px;line-height:1.4}
 .hero-right{position:relative}
-.hero-card-stack{position:relative;height:460px}
+.hero-card-stack{position:relative;height:420px}
 .hcard{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;box-shadow:0 4px 24px rgba(26,31,46,0.07)}
 .hcard-1{top:0;right:0;width:88%;z-index:3}
-.hcard-2{top:60px;right:24px;width:80%;z-index:2;opacity:.6;transform:scale(0.97)}
-.hcard-3{top:110px;right:44px;width:72%;z-index:1;opacity:.3;transform:scale(0.94)}
+.hcard-2{top:55px;right:24px;width:80%;z-index:2;opacity:.55;transform:scale(0.97)}
+.hcard-3{top:100px;right:44px;width:72%;z-index:1;opacity:.25;transform:scale(0.94)}
 .hcard-label{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
 .hcard-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;line-height:1.3}
 .hcard-body{font-size:0.82rem;color:var(--ink-muted);line-height:1.6}
 .hcard-tag{display:inline-block;margin-top:0.75rem;font-size:0.7rem;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--sky-light);color:var(--sky)}
-
-/* SHARED */
-.section{padding:5.5rem clamp(1.5rem,5vw,4rem)}
+.section{padding:5rem clamp(1.5rem,5vw,4rem)}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-kicker{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
 .section-kicker::before{content:'';display:block;width:24px;height:1.5px;background:var(--gold)}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:0.75rem}
 .section-sub{font-size:0.95rem;color:var(--ink-muted);max-width:560px;line-height:1.7;margin-bottom:3rem}
-
-/* ABOUT */
 .about-section{background:var(--off)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-text p{font-size:0.97rem;color:var(--ink-mid);line-height:1.8;margin-bottom:1rem}
@@ -74,242 +64,63 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .cred-title{font-size:1rem;font-weight:500;color:var(--navy);margin-bottom:0.15rem}
 .cred-period{font-size:0.8rem;color:var(--ink-muted)}
 .cred-detail{font-size:0.85rem;color:var(--ink-mid);margin-top:0.35rem;line-height:1.6}
-
-/* PROJECTS */
-.projects-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.project-row{background:var(--white);cursor:pointer;transition:background .15s}
-.project-row:hover{background:var(--off)}
-.project-header{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:1.5rem;padding:1.5rem 2rem}
-.project-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--border)}
-.project-company{font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem}
-.project-title{font-size:1.05rem;font-weight:500;color:var(--navy);line-height:1.3}
-.project-right{display:flex;align-items:center;gap:1rem}
-.project-type-tag{font-size:0.72rem;font-weight:500;padding:4px 12px;border-radius:20px;white-space:nowrap}
-.project-toggle{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--ink-muted);transition:transform .25s,background .15s;flex-shrink:0}
-.project-row.open .project-toggle{transform:rotate(45deg);background:var(--navy);color:var(--white);border-color:var(--navy)}
-.project-body{display:none;padding:0 2rem 2rem;border-top:1px solid var(--off)}
-.project-row.open .project-body{display:block}
-.project-body-inner{padding-top:1.5rem}
-.pb-lede{font-size:1.05rem;font-style:italic;font-family:'Playfair Display',serif;color:var(--navy);line-height:1.6;margin-bottom:1.5rem;padding-left:1rem;border-left:2px solid var(--gold)}
-.pb-cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem}
-.pb-col-label{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.6rem}
-.pb-col-text{font-size:0.9rem;color:var(--ink-mid);line-height:1.75}
-.pb-stat-row{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}
-.pb-stat{background:var(--off);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1.25rem;flex:1;min-width:130px}
-.pb-stat-n{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--navy);line-height:1}
-.pb-stat-l{font-size:0.72rem;color:var(--ink-muted);margin-top:3px;line-height:1.4}
-.pb-pull{background:var(--navy);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0}
-.pb-pull-big{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--gold);margin-bottom:0.3rem;font-weight:700}
-.pb-pull-sub{font-size:0.85rem;color:#A8C4E0;line-height:1.6}
-
-/* WORK SAMPLES */
-.samples-section{background:var(--off)}
-.samples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-.sample-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .25s,transform .25s;cursor:pointer}
-.sample-card:hover{box-shadow:0 12px 32px rgba(26,31,46,0.1);transform:translateY(-3px)}
-.sample-accent{height:4px}
-.sample-card-body{padding:1.5rem}
-.sample-num{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.5rem}
-.sample-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:0.5rem}
-.sample-desc{font-size:0.85rem;color:var(--ink-muted);line-height:1.6;margin-bottom:1rem}
-.sample-tag{display:inline-block;font-size:0.7rem;font-weight:500;padding:3px 10px;border-radius:20px}
-.sample-panel{display:none;border-top:1px solid var(--border);background:var(--off)}
-.sample-panel.open{display:block}
-.sample-panel-inner{padding:1.75rem}
-
-/* Process steps */
-.process-steps{display:flex;flex-direction:column;gap:0;margin-bottom:1.5rem}
-.process-step{display:grid;grid-template-columns:32px 1fr;gap:1rem;position:relative}
-.process-step:not(:last-child)::before{content:'';position:absolute;left:15px;top:32px;bottom:-8px;width:1px;background:var(--border)}
-.process-step-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:500;flex-shrink:0;z-index:1}
-.process-step-content{padding-bottom:1.5rem}
-.process-step-label{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.3rem}
-.process-step-text{font-size:0.88rem;color:var(--ink-mid);line-height:1.7}
-.output-label{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;margin:0.5rem 0 1rem}
-.output-label::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
-
-/* Article sample */
-.article-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
-.article-card-eyebrow{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
-.article-card-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:0.35rem}
-.article-card-byline{font-size:0.78rem;color:var(--ink-muted);margin-bottom:1rem}
-.article-lede{font-size:0.97rem;font-style:italic;color:var(--navy);line-height:1.7;border-left:2px solid var(--gold);padding-left:1rem;margin-bottom:1rem}
-.article-h{font-size:0.9rem;font-weight:500;color:var(--navy);margin:1rem 0 0.3rem}
-.article-p{font-size:0.88rem;color:var(--ink-mid);line-height:1.75;margin-bottom:0.75rem}
-.article-tags{font-size:0.78rem;color:var(--sky);margin-top:1rem}
-.stat-row{display:flex;gap:0.75rem;flex-wrap:wrap;margin:1rem 0}
-.stat-pill{background:var(--navy);border-radius:8px;padding:0.75rem 1rem;flex:1;min-width:110px}
-.stat-pill-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold);line-height:1}
-.stat-pill-label{font-size:0.7rem;color:#A8C4E0;margin-top:2px}
-
-/* Newsletter sample */
-.newsletter-wrap{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 2px 16px rgba(26,31,46,0.06)}
-.nl-hdr{background:var(--navy);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-end}
-.nl-brand{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:0.02em}
-.nl-issue{font-size:0.72rem;color:#A8C4E0;text-align:right;line-height:1.5}
-.nl-gold-bar{height:3px;background:linear-gradient(90deg,var(--gold),#E8B84B)}
-.nl-hero{background:var(--off);padding:1.25rem 1.5rem;border-bottom:1px solid var(--border)}
-.nl-hero-tag{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
-.nl-hero-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:0.5rem}
-.nl-hero-sub{font-size:0.82rem;color:var(--ink-muted);line-height:1.6}
-.nl-body{padding:1.25rem 1.5rem}
-.nl-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.nl-story{padding-bottom:0.75rem}
-.nl-story-tag{font-size:0.65rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:0.4rem}
-.nl-story-title{font-size:0.85rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem;line-height:1.35}
-.nl-story-body{font-size:0.78rem;color:var(--ink-muted);line-height:1.6}
-.nl-divider{height:1px;background:var(--border);margin:0.75rem 0}
-.nl-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:0.75rem}
-.nl-stat-box{background:var(--off);border-radius:6px;padding:0.6rem 0.75rem;text-align:center}
-.nl-stat-n{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy)}
-.nl-stat-l{font-size:0.65rem;color:var(--ink-muted);line-height:1.4}
-.nl-footer{background:var(--navy);padding:0.65rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
-.nl-footer-text{font-size:0.7rem;color:#A8C4E0}
-
-/* Email mockup */
-.email-mock{background:var(--white);border:1px solid #C5D0DB;border-radius:10px;overflow:hidden;box-shadow:0 2px 16px rgba(26,31,46,0.07)}
-.email-hdr{background:var(--navy);padding:0.8rem 1.25rem;display:flex;justify-content:space-between;align-items:center}
-.email-brand{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--white)}
-.email-sub-tag{font-size:0.72rem;color:#A8C4E0}
-.email-gold{height:3px;background:var(--gold)}
-.email-meta{padding:0.7rem 1.25rem;border-bottom:1px solid var(--off)}
-.emr{display:flex;gap:0.5rem;font-size:0.8rem;margin-bottom:2px}
-.emrl{font-weight:500;color:var(--sky);min-width:58px}
-.emrv{color:#444}
-.email-body-pad{padding:1rem 1.25rem}
-.ep{font-size:0.85rem;color:#333;line-height:1.7;margin-bottom:0.6rem}
-.email-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin:0.75rem 0}
-.eblock{padding:0.8rem;border-radius:6px;border-top:3px solid}
-.eblock-t{font-size:0.82rem;font-weight:500;margin-bottom:0.3rem}
-.eblock-b{font-size:0.77rem;line-height:1.55}
-.email-foot{background:var(--off);padding:0.4rem 1.25rem;border-top:1px solid var(--border);font-size:0.72rem;color:var(--ink-muted)}
-
-/* Presentation slide */
-.pres-slide{background:var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(26,31,46,0.15);aspect-ratio:16/9;display:flex;flex-direction:column;position:relative}
-.pres-top-bar{height:4px;background:linear-gradient(90deg,var(--gold),#E8B84B 40%,transparent)}
-.pres-content{flex:1;padding:1.5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
-.pres-left{}
-.pres-eyebrow{font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
-.pres-headline{font-family:'Playfair Display',serif;font-size:clamp(1rem,2.2vw,1.4rem);font-weight:700;color:var(--white);line-height:1.25;margin-bottom:0.75rem}
-.pres-body{font-size:0.72rem;color:#A8C4E0;line-height:1.65}
-.pres-right{display:flex;flex-direction:column;gap:0.5rem}
-.pres-kpi{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:0.6rem 0.85rem;display:flex;align-items:center;gap:0.75rem}
-.pres-kpi-num{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1}
-.pres-kpi-text{font-size:0.7rem;color:#A8C4E0;line-height:1.4}
-.pres-footer{background:rgba(0,0,0,0.25);padding:0.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
-.pres-footer-left{font-size:0.62rem;color:#6B7A8D}
-.pres-footer-right{font-size:0.62rem;color:#6B7A8D}
-
-/* SharePoint */
-.sp-wrap{background:var(--white);border:1px solid #C5D0DB;border-radius:10px;overflow:hidden;box-shadow:0 2px 16px rgba(26,31,46,0.07)}
-.sp-bar{background:#F1F3F4;padding:5px 12px;border-bottom:1px solid #DADCE0;display:flex;align-items:center;gap:8px;font-size:0.72rem;color:#5F6368}
-.sp-pill{background:var(--white);border:1px solid #DADCE0;border-radius:20px;padding:2px 12px;font-size:0.7rem;flex:1;color:#333}
-.sp-nav{background:#0078D4;padding:0 1rem;display:flex;gap:1.5rem;height:38px;align-items:center}
-.sp-ni{font-size:0.75rem;color:rgba(255,255,255,.8)}
-.sp-ni.act{color:var(--white);border-bottom:2px solid var(--white);padding-bottom:2px}
-.sp-hero{background:var(--navy-mid);padding:1.1rem 1rem}
-.sp-zlbl{font-size:0.62rem;font-weight:500;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:.3rem}
-.sp-ht{font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:.45rem}
-.sp-cta-btn{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.72rem;font-weight:500;padding:4px 12px;border-radius:4px}
-.sp-content{padding:.75rem 1rem}
-.sp-rl{font-size:0.62rem;font-weight:500;letter-spacing:.08em;color:var(--sky);text-transform:uppercase;margin:.6rem 0 .35rem}
-.sp-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem}
-.sp-4col{display:grid;grid-template-columns:repeat(4,1fr);gap:.45rem}
-.sp-nc{background:#F4F7FA;border:1px solid #D5DEE8;border-radius:5px;padding:.55rem .7rem;border-top:3px solid}
-.sp-nc-t{font-size:.78rem;font-weight:500;color:var(--navy);margin-bottom:2px}
-.sp-nc-b{font-size:.7rem;color:var(--ink-muted);line-height:1.45}
-.sp-tile{padding:.65rem;border-radius:5px;font-size:.75rem;font-weight:500;color:var(--white)}
-.sp-timeline{display:flex;align-items:center;padding:.7rem 1rem;background:#F4F7FA}
-.sp-ph{display:flex;flex-direction:column;align-items:center;flex:1}
-.sp-dot{width:14px;height:14px;border-radius:50%;margin-bottom:3px}
-.sp-phl{font-size:.62rem;color:#555;text-align:center}
-.sp-line{height:2px;flex:1;margin-top:-16px}
-.sp-foot{background:var(--off);padding:.35rem 1rem;border-top:1px solid var(--border);font-size:.68rem;color:var(--ink-muted)}
-
-/* Social posts */
-.posts-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
-.li-post{background:var(--white);border:1px solid #E0E8F0;border-radius:10px;overflow:hidden}
-.li-top{padding:.8rem .9rem 0;display:flex;align-items:center;gap:9px}
-.li-av{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--gold);flex-shrink:0}
-.li-nm{font-size:.82rem;font-weight:500;color:#1A1A1A}
-.li-rl{font-size:.7rem;color:#666}
-.li-bar{height:2px;background:var(--gold);margin:.65rem 0 0}
-.li-hook{background:var(--navy-mid);padding:.8rem .9rem;font-size:.82rem;font-weight:500;color:var(--white);line-height:1.45}
-.li-body{padding:.8rem .9rem;font-size:.78rem;color:#333;line-height:1.65}
-.li-tags{padding:0 .9rem .8rem;font-size:.7rem;color:#0077B5}
-
-/* CONTACT */
-.contact-section{background:var(--navy);padding:5rem clamp(1.5rem,5vw,4rem)}
+.nav-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+.nav-card{display:block;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;text-decoration:none;transition:box-shadow .25s,transform .25s;position:relative;overflow:hidden}
+.nav-card:hover{box-shadow:0 12px 32px rgba(26,31,46,0.1);transform:translateY(-3px)}
+.nav-card-accent{position:absolute;top:0;left:0;right:0;height:3px}
+.nav-card-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.5rem}
+.nav-card-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem}
+.nav-card-desc{font-size:0.88rem;color:var(--ink-muted);line-height:1.65;margin-bottom:1.25rem}
+.nav-card-cta{font-size:0.82rem;font-weight:500;color:var(--sky);display:flex;align-items:center;gap:6px}
+.nav-card-cta::after{content:'→';transition:transform .2s}
+.nav-card:hover .nav-card-cta::after{transform:translateX(4px)}
+.contact-section{background:var(--navy);padding:3.5rem clamp(1.5rem,5vw,4rem)}
 .contact-inner{max-width:640px;margin:0 auto;text-align:center}
 .contact-kicker{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:10px}
 .contact-kicker::before,.contact-kicker::after{content:'';display:block;width:24px;height:1.5px;background:var(--gold)}
-.contact-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--white);margin-bottom:.75rem;line-height:1.2}
-.contact-sub{color:#A8C4E0;margin-bottom:2rem;font-size:.95rem;line-height:1.7}
-.contact-meta{font-size:.88rem;color:#6B7A8D;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;align-items:center}
-.contact-meta span{color:rgba(255,255,255,0.5);font-weight:500}
+.contact-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--white);margin-bottom:.65rem;line-height:1.2}
+.contact-sub{color:#A8C4E0;margin-bottom:1.5rem;font-size:.9rem;line-height:1.7}
+.contact-meta{font-size:.88rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;align-items:center}
+.contact-meta span{color:rgba(255,255,255,0.45);font-weight:500}
 .contact-meta a{color:#A8C4E0;text-decoration:none;transition:color .2s}
 .contact-meta a:hover{color:var(--gold)}
-
-footer{background:#111823;padding:1.5rem clamp(1.5rem,5vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-copy{font-size:.78rem;color:#3A4A5C}
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{font-size:.78rem;color:#3A4A5C;text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#6B7A8D}
-
-/* ANIMATIONS */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:none}
 .reveal-delay-1{transition-delay:.1s}
 .reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}
-
-/* RESPONSIVE */
-@media(max-width:860px){
-  .hero{grid-template-columns:1fr;padding-top:6rem}
-  .hero-right{display:none}
-  .about-grid{grid-template-columns:1fr}
-  .pb-cols{grid-template-columns:1fr}
-  .nl-cols{grid-template-columns:1fr}
-  .posts-3{grid-template-columns:1fr}
-  .email-blocks{grid-template-columns:1fr}
-  .project-header{grid-template-columns:50px 1fr}
-  .project-right{display:none}
-  .nav-links{display:none}
-  .pres-content{grid-template-columns:1fr}
-  .pres-right{display:none}
-}
-@media(max-width:560px){
-  .sp-4col{grid-template-columns:repeat(2,1fr)}
-  .skills-grid{grid-template-columns:1fr}
-  .nl-stat-row{grid-template-columns:repeat(3,1fr)}
-  .samples-grid{grid-template-columns:1fr}
-}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:6rem}.hero-right,.hero-stats{display:none}.about-grid{grid-template-columns:1fr}.nav-cards{grid-template-columns:1fr}.nav-links{display:none}}
+@media(max-width:560px){.skills-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <nav>
-  <a class="nav-logo" href="#">Geetika Yadav</a>
+  <a class="nav-logo" href="index.html">Geetika Yadav</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#samples">Work Samples</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="samples.html">Work Samples</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-photo-wrap reveal">
-      <!-- To add a photo: replace the div below with <img class="hero-photo" src="profile.png" alt="Geetika Yadav"> -->
-      <div class="hero-photo-placeholder">GY</div>
+      <img class="hero-photo" src="profile.png" alt="Geetika Yadav" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-photo-placeholder" style="display:none">GY</div>
     </div>
     <div class="hero-eyebrow reveal">Communications Professional</div>
     <p class="hero-role reveal reveal-delay-1">Executive Communications &nbsp;·&nbsp; Content Strategy &nbsp;·&nbsp; Delhi NCR</p>
     <blockquote class="hero-tagline reveal reveal-delay-2">Ten years of turning organisational complexity into communication people actually read.</blockquote>
     <div class="hero-actions reveal reveal-delay-2">
-      <a class="btn-primary" href="#projects">View my work</a>
+      <a class="btn-primary" href="projects.html">View projects</a>
+      <a class="btn-outline" href="samples.html">Work samples</a>
     </div>
     <div class="hero-stats reveal reveal-delay-3">
       <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Years in communications</div></div>
@@ -331,7 +142,6 @@ footer{background:#111823;padding:1.5rem clamp(1.5rem,5vw,4rem);display:flex;jus
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="section about-section" id="about">
   <div class="section-inner">
     <div class="about-grid">
@@ -384,560 +194,35 @@ footer{background:#111823;padding:1.5rem clamp(1.5rem,5vw,4rem);display:flex;jus
         <div style="font-size:.85rem;color:var(--ink-mid);line-height:1.9">Microsoft PowerPoint &nbsp;·&nbsp; SharePoint &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Teams &nbsp;·&nbsp; Viva Engage &nbsp;·&nbsp; Canva &nbsp;·&nbsp; Survey Platforms &nbsp;·&nbsp; Excel</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="section-inner">
-    <div class="section-kicker reveal">Projects</div>
-    <h2 class="section-title reveal">Work I have led and delivered</h2>
-    <p class="section-sub reveal">Real projects from my career at Genpact. Each one describes the context, my role, and the outcomes. The proprietary assets from these engagements remain with the organisations that own them; the work samples section below contains original artefacts that reflect how I approach similar briefs.</p>
-
-    <div class="projects-list reveal">
-
-      <!-- PROJECT 1 -->
-      <div class="project-row" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-num">01</div>
-          <div class="project-meta">
-            <div class="project-company">Genpact &nbsp;·&nbsp; 2020 to 2021</div>
-            <div class="project-title">COVID-19 Transition Programme: Enterprise change communications</div>
-          </div>
-          <div class="project-right">
-            <span class="project-type-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Change communications</span>
-            <div class="project-toggle">+</div>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-body-inner">
-            <p class="pb-lede">"The brief was simple: keep 2,000 people informed, reassured, and connected through the most uncertain period any of them had experienced at work."</p>
-            <div class="pb-cols">
-              <div>
-                <div class="pb-col-label">The challenge</div>
-                <p class="pb-col-text">Genpact needed to execute a 12-month transition programme while maintaining employee awareness, operational continuity, and psychological safety across a fully remote workforce, with no prior playbook to work from.</p>
-              </div>
-              <div>
-                <div class="pb-col-label">My role</div>
-                <p class="pb-col-text">Core communications team member responsible for channel strategy, message architecture, content production, and cadence planning across email, intranet, Teams, town halls, and manager cascade kits.</p>
-              </div>
-            </div>
-            <div class="pb-stat-row">
-              <div class="pb-stat"><div class="pb-stat-n">50+</div><div class="pb-stat-l">Targeted communications delivered</div></div>
-              <div class="pb-stat"><div class="pb-stat-n">~80%</div><div class="pb-stat-l">Employee awareness score sustained</div></div>
-              <div class="pb-stat"><div class="pb-stat-n">5</div><div class="pb-stat-l">Simultaneous change initiatives managed</div></div>
-              <div class="pb-stat"><div class="pb-stat-n">68%</div><div class="pb-stat-l">Average pulse survey response rate</div></div>
-            </div>
-            <div class="pb-pull">
-              <div class="pb-pull-big">10 days</div>
-              <div class="pb-pull-sub">Campaign lead time, extended from 2 days, creating space for stakeholder alignment, message refinement, and channel coordination before every send.</div>
-            </div>
-            <div class="pb-cols">
-              <div>
-                <div class="pb-col-label">What worked</div>
-                <p class="pb-col-text">Treating the communications calendar as a strategic asset rather than an administrative one. Moving to a 10-day lead time created discipline that improved quality across every channel simultaneously.</p>
-              </div>
-              <div>
-                <div class="pb-col-label">What I learned</div>
-                <p class="pb-col-text">Employees are not anxious about the news. They are anxious about the silence between the news. Predictable cadence is as important as message content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div style="margin-top:4rem;border-top:1px solid var(--border);padding-top:3rem">
+      <div class="section-kicker reveal">Explore</div>
+      <h2 class="section-title reveal">Projects and work samples</h2>
+      <div class="nav-cards reveal">
+        <a class="nav-card" href="projects.html">
+          <div class="nav-card-accent" style="background:var(--gold)"></div>
+          <div class="nav-card-label">Projects</div>
+          <div class="nav-card-title">Work I have led and delivered</div>
+          <div class="nav-card-desc">Three real projects from my career at Genpact, each described with full context, my role, and the outcomes achieved. Change communications, town hall programmes, and SharePoint intranet.</div>
+          <div class="nav-card-cta">View projects</div>
+        </a>
+        <a class="nav-card" href="samples.html">
+          <div class="nav-card-accent" style="background:var(--sky)"></div>
+          <div class="nav-card-label">Work Samples</div>
+          <div class="nav-card-title">How I approach the work</div>
+          <div class="nav-card-desc">Six original samples rendered in their actual delivery format: emails as they appear in Outlook, newsletters as they land in an inbox, slides as they look in PowerPoint. Brief, approach, and output for each.</div>
+          <div class="nav-card-cta">View work samples</div>
+        </a>
       </div>
-
-      <!-- PROJECT 2 -->
-      <div class="project-row" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-num">02</div>
-          <div class="project-meta">
-            <div class="project-company">Genpact &nbsp;·&nbsp; 2016 to 2023</div>
-            <div class="project-title">Annual Town Hall Programme: End-to-end event communications</div>
-          </div>
-          <div class="project-right">
-            <span class="project-type-tag" style="background:var(--sky-light);color:#1A4A7A;border:1px solid #5B8DB8">Executive comms</span>
-            <div class="project-toggle">+</div>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-body-inner">
-            <p class="pb-lede">"Six town halls a year. Sixty leadership messages. One consistent standard: every employee leaves knowing what matters, what is next, and what it means for them."</p>
-            <div class="pb-cols">
-              <div>
-                <div class="pb-col-label">The scope</div>
-                <p class="pb-col-text">Planned and executed six annual town halls with end-to-end ownership: pre-event communications, executive briefing packs, live Q&A facilitation, speaker notes, and post-event follow-up content distributed to 2,000+ employees.</p>
-              </div>
-              <div>
-                <div class="pb-col-label">Consistent outcomes</div>
-                <p class="pb-col-text">Maintained 65%+ attendance across all six annual events. Developed a repeatable communications framework that reduced production time by 30% over three years while improving message consistency.</p>
-              </div>
-            </div>
-            <div class="pb-stat-row">
-              <div class="pb-stat"><div class="pb-stat-n">6</div><div class="pb-stat-l">Town halls executed annually</div></div>
-              <div class="pb-stat"><div class="pb-stat-n">65%+</div><div class="pb-stat-l">Consistent attendance rate</div></div>
-              <div class="pb-stat"><div class="pb-stat-n">15+</div><div class="pb-stat-l">Comms assets produced monthly</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 3 -->
-      <div class="project-row" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-num">03</div>
-          <div class="project-meta">
-            <div class="project-company">Genpact &nbsp;·&nbsp; 2018 to 2023</div>
-            <div class="project-title">SharePoint Intranet: Architecture, governance, and engagement</div>
-          </div>
-          <div class="project-right">
-            <span class="project-type-tag" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">Digital channels</span>
-            <div class="project-toggle">+</div>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-body-inner">
-            <p class="pb-lede">"An intranet is only as good as the trust employees place in it. Building that trust means showing up consistently, with the right content, in the right place, on time."</p>
-            <div class="pb-cols">
-              <div>
-                <div class="pb-col-label">The challenge</div>
-                <p class="pb-col-text">Genpact's intranet was a publishing destination, not a destination employees chose to visit. Pages were inconsistently updated, ownership was unclear, and navigation did not reflect how employees actually looked for information.</p>
-              </div>
-              <div>
-                <div class="pb-col-label">What I built</div>
-                <p class="pb-col-text">A content governance model with clear zone ownership, publishing cadence, and archiving rules. Restructured the homepage architecture around audience need rather than department preference. Monthly active users increased by approximately 35%.</p>
-              </div>
-            </div>
-            <div class="pb-stat-row">
-              <div class="pb-stat"><div class="pb-stat-n">~35%</div><div class="pb-stat-l">Increase in monthly active users</div></div>
-              <div class="pb-stat"><div class="pb-stat-n">6</div><div class="pb-stat-l">Departments with managed comms calendars</div></div>
-              <div class="pb-stat"><div class="pb-stat-n">2,000+</div><div class="pb-stat-l">Employees on the platform</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- WORK SAMPLES -->
-<section class="section samples-section" id="samples">
-  <div class="section-inner">
-    <div class="section-kicker reveal">Work Samples</div>
-    <h2 class="section-title reveal">How I approach the work</h2>
-    <p class="section-sub reveal">Each sample below shows the brief I set for myself, the thinking behind the approach, and the output. These are original pieces created to reflect the type of communication challenges I have worked on throughout my career.</p>
-
-    <div class="samples-grid">
-
-      <!-- SAMPLE 1: Written Article -->
-      <div class="sample-card reveal" onclick="toggleSample('ws1')">
-        <div class="sample-accent" style="background:var(--gold)"></div>
-        <div class="sample-card-body">
-          <div class="sample-num">Sample 01</div>
-          <div class="sample-title">Written article: communicating through a crisis</div>
-          <div class="sample-desc">A long-form piece drawing directly on the COVID-19 programme experience. Written to demonstrate how I think about audience, structure, and the purpose of internal communications.</div>
-          <span class="sample-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Written content</span>
-        </div>
-        <div class="sample-panel" id="ws1">
-          <div class="sample-panel-inner">
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The brief</div>
-                  <div class="process-step-text">Write a professional article that reflects on what works in large-scale change communications, grounded in real experience rather than theory. Audience: peers, hiring managers, and potential collaborators.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The approach</div>
-                  <div class="process-step-text">Structured around three concrete lessons rather than a general narrative. Each lesson is supported by a specific operational decision from the programme, so the reader gets insight, not just assertion. Kept sharp with no filler.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">Format decision</div>
-                  <div class="process-step-text">Long-form article with a strong opening hook, numbered insights for scannability, and a closing statement that lands a philosophy rather than a summary. Designed to be read in full, not skimmed.</div>
-                </div>
-              </div>
-            </div>
-            <div class="output-label">Output</div>
-            <div class="article-card">
-              <div class="article-card-eyebrow">Written article</div>
-              <div class="article-card-title">When silence was not an option: lessons from communicating through a crisis</div>
-              <div class="article-card-byline">Geetika Yadav &nbsp;·&nbsp; 5 min read</div>
-              <p class="article-lede">"In early 2020, my team had 72 hours to build a communications plan for 2,000+ employees. No playbook. No precedent. Just a blank slide deck and a lot of questions from people we had not yet figured out how to reach."</p>
-              <div class="stat-row">
-                <div class="stat-pill"><div class="stat-pill-num">50+</div><div class="stat-pill-label">Targeted communications</div></div>
-                <div class="stat-pill"><div class="stat-pill-num">~80%</div><div class="stat-pill-label">Awareness score</div></div>
-                <div class="stat-pill"><div class="stat-pill-num">68%</div><div class="stat-pill-label">Survey response rate</div></div>
-              </div>
-              <div class="article-h">Clarity beats comprehensiveness</div>
-              <p class="article-p">Each communication had one primary action or insight. Writing for a single question, "What does this mean for me, right now?", drove clarity and cut content noise significantly.</p>
-              <div class="article-h">Cadence is its own form of reassurance</div>
-              <p class="article-p">Employees were not anxious about the news. They were anxious about the silence between the news. Extending campaign lead time from 2 to 10 days created a predictable rhythm that reduced speculation and improved stakeholder confidence.</p>
-              <div class="article-h">The communicator's job is to reduce cognitive load, not add to it</div>
-              <p class="article-p">Short paragraphs. Consistent formats. Named contacts. Specific timelines. These are not stylistic choices. They are acts of organisational care.</p>
-              <div class="article-tags">#InternalCommunications &nbsp; #ChangeManagement &nbsp; #EmployeeEngagement</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SAMPLE 2: Newsletter -->
-      <div class="sample-card reveal" onclick="toggleSample('ws2')">
-        <div class="sample-accent" style="background:var(--sky)"></div>
-        <div class="sample-card-body">
-          <div class="sample-num">Sample 02</div>
-          <div class="sample-title">Internal newsletter: design and editorial structure</div>
-          <div class="sample-desc">A designed newsletter template showing how I approach layout, content hierarchy, editorial tone, and audience segmentation for a recurring internal publication.</div>
-          <span class="sample-tag" style="background:var(--sky-light);color:#1A4A7A;border:1px solid #5B8DB8">Newsletter design</span>
-        </div>
-        <div class="sample-panel" id="ws2">
-          <div class="sample-panel-inner">
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The brief</div>
-                  <div class="process-step-text">Design a recurring internal newsletter for a programme team of 2,000+ employees. It needs to carry multiple content types, feel consistent across issues, and not require a designer to produce each time.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The approach</div>
-                  <div class="process-step-text">Defined four fixed zones: a hero story, a two-column news section, a data snapshot row, and a footer. Fixed zones mean the template can be populated by any team member without layout decisions. Editorial tone set as direct and human, not corporate.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">Format decision</div>
-                  <div class="process-step-text">Brand-consistent header with issue numbering so employees build a habit of looking for it. Colour-coded content tags so readers can navigate to what is relevant to them. Stats row carries the key pulse data in every issue, making numbers part of the rhythm.</div>
-                </div>
-              </div>
-            </div>
-            <div class="output-label">Output</div>
-            <div class="newsletter-wrap">
-              <div class="nl-hdr">
-                <div class="nl-brand">Meridian Insider</div>
-                <div class="nl-issue">Issue 06 &nbsp;·&nbsp; June 2024<br>Project Meridian &nbsp;·&nbsp; Internal</div>
-              </div>
-              <div class="nl-gold-bar"></div>
-              <div class="nl-hero">
-                <div class="nl-hero-tag">This month</div>
-                <div class="nl-hero-title">Phase 2 is live. Here is what changes for your team.</div>
-                <div class="nl-hero-sub">After six months of groundwork, Phase 2 of Project Meridian began on 1 June. This issue covers what it means in practice, who to speak to, and what the data is telling us so far.</div>
-              </div>
-              <div class="nl-body">
-                <div class="nl-cols">
-                  <div>
-                    <div class="nl-story">
-                      <span class="nl-story-tag" style="background:var(--sky-light);color:var(--sky)">Process</span>
-                      <div class="nl-story-title">New approval workflows go live in Finance and Ops this month</div>
-                      <div class="nl-story-body">The redesigned sign-off process reduces average turnaround from 4 days to 1. Training sessions run every Tuesday through June.</div>
-                    </div>
-                    <div class="nl-divider"></div>
-                    <div class="nl-story">
-                      <span class="nl-story-tag" style="background:var(--green-bg);color:var(--green)">People</span>
-                      <div class="nl-story-title">Meet your Phase 2 workstream lead</div>
-                      <div class="nl-story-body">Each workstream now has a named lead as your single point of contact for questions, escalations, and updates throughout Phase 2.</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="nl-story">
-                      <span class="nl-story-tag" style="background:var(--gold-bg);color:#7A5200">Leadership</span>
-                      <div class="nl-story-title">COO message: what Phase 2 asks of each of us</div>
-                      <div class="nl-story-body">"Phase 1 proved we can do this. Phase 2 asks us to go further. I am proud of the discipline this organisation has shown, and confident in what comes next."</div>
-                    </div>
-                    <div class="nl-divider"></div>
-                    <div class="nl-story">
-                      <span class="nl-story-tag" style="background:#F5F0FA;color:#6B3FA0">Event</span>
-                      <div class="nl-story-title">Town hall: 20 June, 3 PM. Register now.</div>
-                      <div class="nl-story-body">Live Q&A with programme leadership. Submit your questions in advance via the Meridian intranet page.</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="nl-divider"></div>
-                <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.5rem">Programme pulse</div>
-                <div class="nl-stat-row">
-                  <div class="nl-stat-box"><div class="nl-stat-n">76%</div><div class="nl-stat-l">Feel informed about Phase 2</div></div>
-                  <div class="nl-stat-box"><div class="nl-stat-n">3 of 4</div><div class="nl-stat-l">Workstreams on track</div></div>
-                  <div class="nl-stat-box"><div class="nl-stat-n">65%</div><div class="nl-stat-l">Town hall registration so far</div></div>
-                </div>
-              </div>
-              <div class="nl-footer">
-                <div class="nl-footer-text">Meridian Insider &nbsp;·&nbsp; Internal &nbsp;·&nbsp; Not for external distribution</div>
-                <div class="nl-footer-text">meridian@company.com</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SAMPLE 3: Executive Communication -->
-      <div class="sample-card reveal" onclick="toggleSample('ws3')">
-        <div class="sample-accent" style="background:var(--navy)"></div>
-        <div class="sample-card-body">
-          <div class="sample-num">Sample 03</div>
-          <div class="sample-title">Executive communication: programme launch announcement</div>
-          <div class="sample-desc">A designed email template for a leadership announcement, showing how I structure executive voice, visual hierarchy, and clear messaging across a complex communication.</div>
-          <span class="sample-tag" style="background:#EEF1F6;color:#2E4070;border:1px solid #3D5170">Executive comms</span>
-        </div>
-        <div class="sample-panel" id="ws3">
-          <div class="sample-panel-inner">
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The brief</div>
-                  <div class="process-step-text">The COO needs to announce a major programme to all employees. The message must be reassuring without being vague, credible without being dense, and easy to act on without being patronising.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The approach</div>
-                  <div class="process-step-text">Three content blocks answer the three questions employees ask first: what is this, why now, and what this is not. The third block (what this is not) is the most important, as it addresses the fear before the employee has to voice it.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">Format decision</div>
-                  <div class="process-step-text">Branded email template with a clear sender identity, subject line designed to be opened, three equal-weight content blocks for scanning, and a single next-step action. No attachments on first send, all detail lives on the intranet page.</div>
-                </div>
-              </div>
-            </div>
-            <div class="output-label">Output</div>
-            <div class="email-mock">
-              <div class="email-hdr"><span class="email-brand">MERIDIAN COMMUNICATIONS</span><span class="email-sub-tag">Internal Broadcast</span></div>
-              <div class="email-gold"></div>
-              <div class="email-meta">
-                <div class="emr"><span class="emrl">From:</span><span class="emrv">Chief Operating Officer, Meridian Leadership Team</span></div>
-                <div class="emr"><span class="emrl">To:</span><span class="emrv">All Employees</span></div>
-                <div class="emr"><span class="emrl">Subject:</span><span class="emrv" style="font-weight:500;color:var(--navy)">Introducing Project Meridian: what it means for our teams</span></div>
-              </div>
-              <div class="email-body-pad">
-                <p class="ep">Team,</p>
-                <p class="ep">Today we are launching Project Meridian, our organisation-wide operating model transformation programme. I want to explain what this means, why it matters, and what you can expect in the months ahead.</p>
-                <div class="email-blocks">
-                  <div class="eblock" style="background:#F4F7FA;border-color:var(--sky)"><div class="eblock-t" style="color:var(--navy)">What is Meridian?</div><div class="eblock-b" style="color:#444">An 18-month programme to modernise how we operate, covering Process Redesign, Technology Enablement, Talent and Organisation, and Governance.</div></div>
-                  <div class="eblock" style="background:#F4F7FA;border-color:var(--sky)"><div class="eblock-t" style="color:var(--navy)">Why now?</div><div class="eblock-b" style="color:#444">The structures that served us at one scale are limiting us at another. This is a conscious investment in the next phase of growth.</div></div>
-                  <div class="eblock" style="background:var(--navy);border-color:var(--gold)"><div class="eblock-t" style="color:var(--gold)">What this is NOT</div><div class="eblock-b" style="color:#A8C4E0">A restructuring exercise. Meridian is about capability, building the foundation for sustainable, client-focused growth.</div></div>
-                </div>
-                <p class="ep">Your line manager will brief your team in the next four weeks. The first Q&amp;A session is on [Date]. A dedicated intranet page goes live on [Date] with the full timeline and contact directory.</p>
-                <p class="ep" style="color:var(--ink-muted);font-size:.78rem">[Chief Operating Officer] &nbsp;·&nbsp; Chief Operating Officer &nbsp;·&nbsp; Project Meridian Sponsor</p>
-              </div>
-              <div class="email-foot">Meridian Programme &nbsp;·&nbsp; Internal Communications &nbsp;·&nbsp; Confidential</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SAMPLE 4: Presentation Slide -->
-      <div class="sample-card reveal" onclick="toggleSample('ws4')">
-        <div class="sample-accent" style="background:var(--gold)"></div>
-        <div class="sample-card-body">
-          <div class="sample-num">Sample 04</div>
-          <div class="sample-title">Executive presentation: mid-programme progress slide</div>
-          <div class="sample-desc">A single designed slide from an executive leadership deck, showing how I structure data, narrative, and visual hierarchy to support a leadership message.</div>
-          <span class="sample-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Presentation design</span>
-        </div>
-        <div class="sample-panel" id="ws4">
-          <div class="sample-panel-inner">
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The brief</div>
-                  <div class="process-step-text">Build one slide for a leadership deck that communicates programme progress at the 6-month mark. The audience is senior leadership. The slide needs to convey confidence without oversimplifying, and carry a clear narrative, not just data.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The approach</div>
-                  <div class="process-step-text">The left panel carries the narrative: what is the situation, what has been achieved, and what it means. The right panel carries the evidence: four KPIs that back the narrative. The two panels are designed to work independently so a presenter can reference either without the other.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">Format decision</div>
-                  <div class="process-step-text">Dark background signals this is a leadership-tier deck. Gold accent colour carries trust and authority. KPI cards use large numerals so the key numbers read from the back of a room. Footer carries slide context so it can stand alone in a follow-up email.</div>
-                </div>
-              </div>
-            </div>
-            <div class="output-label">Output</div>
-            <div class="pres-slide">
-              <div class="pres-top-bar"></div>
-              <div class="pres-content">
-                <div class="pres-left">
-                  <div class="pres-eyebrow">Project Meridian &nbsp;·&nbsp; 6-month progress</div>
-                  <div class="pres-headline">We are on track, and the data supports moving forward with confidence</div>
-                  <div class="pres-body">Three of four workstreams have completed Phase 1 on schedule. Employee awareness sits at approximately 80%, above the 70% target set at programme launch. The communications cadence established in Q1 has held. Leadership alignment meetings have run without escalation since February.<br><br>Recommendation: proceed to Phase 2 as planned in July.</div>
-                </div>
-                <div class="pres-right">
-                  <div class="pres-kpi"><div class="pres-kpi-num">3/4</div><div class="pres-kpi-text">Workstreams: Phase 1 complete, on schedule</div></div>
-                  <div class="pres-kpi"><div class="pres-kpi-num">~80%</div><div class="pres-kpi-text">Employee awareness score, versus 70% target</div></div>
-                  <div class="pres-kpi"><div class="pres-kpi-num">68%</div><div class="pres-kpi-text">Pulse survey response rate, up from 52% at launch</div></div>
-                  <div class="pres-kpi"><div class="pres-kpi-num">0</div><div class="pres-kpi-text">Leadership escalations since communications cadence established</div></div>
-                </div>
-              </div>
-              <div class="pres-footer">
-                <div class="pres-footer-left">Project Meridian &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Leadership Review June 2024</div>
-                <div class="pres-footer-right">Slide 4 of 12</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SAMPLE 5: SharePoint -->
-      <div class="sample-card reveal" onclick="toggleSample('ws5')">
-        <div class="sample-accent" style="background:#2ECC9A"></div>
-        <div class="sample-card-body">
-          <div class="sample-num">Sample 05</div>
-          <div class="sample-title">SharePoint homepage: zone architecture and wireframe</div>
-          <div class="sample-desc">A structured homepage design for a programme intranet, showing zone planning, navigation logic, content ownership, and publishing governance.</div>
-          <span class="sample-tag" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">SharePoint design</span>
-        </div>
-        <div class="sample-panel" id="ws5">
-          <div class="sample-panel-inner">
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The brief</div>
-                  <div class="process-step-text">Design a SharePoint homepage for a major programme that serves 2,000+ employees across multiple functions. Must work without a developer after initial build, support a weekly publishing cadence, and be governable by a comms team of two.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The approach</div>
-                  <div class="process-step-text">Mapped the six distinct audience needs: knowing what is happening now, understanding the programme structure, finding documents, tracking the timeline, knowing who to contact, and attending events. Each need maps to one homepage zone, so the architecture is audience-driven rather than content-driven.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">Governance model</div>
-                  <div class="process-step-text">Every zone has a named owner. The Comms Lead owns the hero and news zones. Workstream Leads own their tile subsites. Nothing publishes without a named owner assigned. Stale content (over 30 days without review) is flagged automatically.</div>
-                </div>
-              </div>
-            </div>
-            <div class="output-label">Output</div>
-            <div class="sp-wrap">
-              <div class="sp-bar"><span>● ● ●</span><div class="sp-pill">company.sharepoint.com/sites/meridian</div></div>
-              <div class="sp-nav"><span class="sp-ni act">Home</span><span class="sp-ni">Workstreams</span><span class="sp-ni">Resources</span><span class="sp-ni">Timeline</span><span class="sp-ni">Contacts</span></div>
-              <div class="sp-hero">
-                <div class="sp-zlbl">Zone 1 — Hero banner</div>
-                <div class="sp-ht">Project Meridian: Transforming How We Work</div>
-                <span class="sp-cta-btn">Read latest update</span>
-              </div>
-              <div class="sp-content">
-                <div class="sp-rl">Zone 2 — What's new</div>
-                <div class="sp-3col">
-                  <div class="sp-nc" style="border-top-color:var(--sky)"><div class="sp-nc-t">Latest announcement</div><div class="sp-nc-b">Phase 2 kick-off confirmed</div></div>
-                  <div class="sp-nc" style="border-top-color:var(--sky)"><div class="sp-nc-t">Most recent Q&amp;A</div><div class="sp-nc-b">Recording now available</div></div>
-                  <div class="sp-nc" style="border-top-color:var(--sky)"><div class="sp-nc-t">Upcoming event</div><div class="sp-nc-b">Town hall — [Date]</div></div>
-                </div>
-                <div class="sp-rl">Zone 3 — Programme overview</div>
-                <div class="sp-4col">
-                  <div class="sp-tile" style="background:var(--navy)">Process Redesign</div>
-                  <div class="sp-tile" style="background:#1A6B8A">Technology Enablement</div>
-                  <div class="sp-tile" style="background:#2A5C45">Talent and Organisation</div>
-                  <div class="sp-tile" style="background:#6A3B5C">Governance</div>
-                </div>
-                <div class="sp-rl">Zone 4 — Timeline tracker</div>
-                <div class="sp-timeline">
-                  <div class="sp-ph"><div class="sp-dot" style="background:var(--sky)"></div><div class="sp-phl">Discovery</div></div>
-                  <div class="sp-line" style="background:var(--sky)"></div>
-                  <div class="sp-ph"><div class="sp-dot" style="background:var(--sky)"></div><div class="sp-phl">Design</div></div>
-                  <div class="sp-line" style="background:var(--sky)"></div>
-                  <div class="sp-ph"><div class="sp-dot" style="background:var(--sky)"></div><div class="sp-phl">Phase 1</div></div>
-                  <div class="sp-line" style="background:var(--gold)"></div>
-                  <div class="sp-ph"><div class="sp-dot" style="background:var(--gold)"></div><div class="sp-phl">Phase 2</div></div>
-                  <div class="sp-line" style="background:#CCC"></div>
-                  <div class="sp-ph"><div class="sp-dot" style="background:#CCC"></div><div class="sp-phl">Phase 3</div></div>
-                </div>
-              </div>
-              <div class="sp-foot">Zone ownership: Comms Lead = Hero and News &nbsp;·&nbsp; PM = Timeline &nbsp;·&nbsp; Workstream Leads = Tiles and Resources</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SAMPLE 6: Social Posts -->
-      <div class="sample-card reveal" onclick="toggleSample('ws6')">
-        <div class="sample-accent" style="background:#0077B5"></div>
-        <div class="sample-card-body">
-          <div class="sample-num">Sample 06</div>
-          <div class="sample-title">Professional social content: thought leadership posts</div>
-          <div class="sample-desc">Three short-form posts written in a consistent professional voice. Each one makes a single, specific point about internal communications without hedging or padding.</div>
-          <span class="sample-tag" style="background:#E8F4FB;color:#005885;border:1px solid #0077B5">Social content</span>
-        </div>
-        <div class="sample-panel" id="ws6">
-          <div class="sample-panel-inner">
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The brief</div>
-                  <div class="process-step-text">Write professional social posts that build thought leadership in internal communications. Each post should say one thing well, be grounded in real experience, and reflect the writing voice I use in all professional contexts: sharp, no filler, no generic advice.</div>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
-                <div class="process-step-content">
-                  <div class="process-step-label">The approach</div>
-                  <div class="process-step-text">Each post opens with a hook that is concrete and specific rather than a question or a vague claim. The body develops one insight, with a real data point or decision where possible. The close lands a provocation or reframe rather than a summary. Three posts across different aspects of the discipline.</div>
-                </div>
-              </div>
-            </div>
-            <div class="output-label">Output</div>
-            <div class="posts-3">
-              <div class="li-post">
-                <div class="li-top"><div class="li-av">GY</div><div><div class="li-nm">Geetika Yadav</div><div class="li-rl">Communications and Content Lead</div></div></div>
-                <div class="li-bar"></div>
-                <div class="li-hook">One habit that improved every presentation I worked on</div>
-                <div class="li-body">Before writing a single slide, write one sentence: "After this presentation, the audience will ___."<br><br>Not "understand our Q3 results." A specific, concrete action or decision.<br><br>Most presentations are built around what the presenter knows, not what the audience needs to leave with.<br><br>Try it on your next deck. You will cut at least three slides.</div>
-                <div class="li-tags">#ExecutiveComms &nbsp; #Presentations &nbsp; #Storytelling</div>
-              </div>
-              <div class="li-post">
-                <div class="li-top"><div class="li-av">GY</div><div><div class="li-nm">Geetika Yadav</div><div class="li-rl">Communications and Content Lead</div></div></div>
-                <div class="li-bar"></div>
-                <div class="li-hook">In communications, discipline is the creative act</div>
-                <div class="li-body">50+ communications. 5 channels. An awareness score of approximately 80% throughout.<br><br>The biggest difference-maker was not the content. It was the calendar.<br><br>Moving from 2-day to 10-day lead times gave us space for alignment, better editing, and consistent channel decisions, instead of publishing under pressure.</div>
-                <div class="li-tags">#ChangeManagement &nbsp; #InternalComms &nbsp; #CrisisComms</div>
-              </div>
-              <div class="li-post">
-                <div class="li-top"><div class="li-av">GY</div><div><div class="li-nm">Geetika Yadav</div><div class="li-rl">Communications and Content Lead</div></div></div>
-                <div class="li-bar"></div>
-                <div class="li-hook">The most underrated skill: knowing when not to send</div>
-                <div class="li-body">More volume does not equal more trust. We measured it.<br><br>When we reduced frequency and increased specificity, pulse survey response rates went up. Employee fatigue dropped. Managers stopped forwarding with FYI and started engaging with the content.<br><br>If employees are not reading your communications, the answer is rarely more communications.</div>
-                <div class="li-tags">#InternalComms &nbsp; #ContentStrategy &nbsp; #EmployeeExperience</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <div class="contact-section" id="contact">
   <div class="contact-inner">
     <div class="contact-kicker">Get in touch</div>
     <h2 class="contact-title">Open to the right opportunity</h2>
-    <p class="contact-sub">Immediate joiner based in Delhi NCR, available for hybrid or on-site roles in Gurugram and Central Delhi. Open to communications, content strategy, executive comms, and employer branding roles.</p>
+    <p class="contact-sub">Immediate joiner based in Delhi NCR, available for hybrid or on-site roles in Gurugram and Central Delhi.</p>
     <div class="contact-meta">
       <span>Contact:</span>
       <a href="mailto:geetika.yadav@outlook.in">geetika.yadav@outlook.in</a>
@@ -946,32 +231,16 @@ footer{background:#111823;padding:1.5rem clamp(1.5rem,5vw,4rem);display:flex;jus
     </div>
   </div>
 </div>
-
 <footer>
   <div class="footer-copy">© 2025 Geetika Yadav &nbsp;·&nbsp; Communications and Content Professional &nbsp;·&nbsp; Delhi NCR</div>
   <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#samples">Samples</a>
+    <a href="projects.html">Projects</a>
+    <a href="samples.html">Samples</a>
     <a href="mailto:geetika.yadav@outlook.in">Email</a>
   </div>
 </footer>
-
 <script>
-function toggleProject(row){
-  const isOpen=row.classList.contains('open');
-  document.querySelectorAll('.project-row.open').forEach(r=>r.classList.remove('open'));
-  if(!isOpen){row.classList.add('open');setTimeout(()=>{row.querySelector('.project-body').scrollIntoView({behavior:'smooth',block:'nearest'})},60);}
-}
-function toggleSample(id){
-  const panel=document.getElementById(id);
-  const isOpen=panel.classList.contains('open');
-  document.querySelectorAll('.sample-panel.open').forEach(p=>p.classList.remove('open'));
-  if(!isOpen){panel.classList.add('open');setTimeout(()=>{panel.scrollIntoView({behavior:'smooth',block:'nearest'})},60);}
-}
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}});
-},{threshold:0.08});
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
