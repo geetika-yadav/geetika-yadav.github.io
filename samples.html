@@ -143,42 +143,52 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .ppt-thumb-num{font-size:8px;color:#999}
 .ppt-slide-area{flex:1}
 /* The actual slide — light theme */
-.ppt-slide{background:#FFFFFF;border-radius:4px;overflow:hidden;aspect-ratio:16/9;display:grid;grid-template-rows:auto 1fr auto auto;box-shadow:0 2px 12px rgba(0,0,0,0.15);border:1px solid #E0E0E0}
-.slide-top-accent{height:5px;background:#1B2A4A}
-/* header row */
-.slide-header{padding:clamp(8px,1.4vw,16px) clamp(14px,2.5vw,28px) clamp(4px,0.7vw,8px);border-bottom:1px solid #F0F2F5;display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
-.slide-eyebrow{font-size:clamp(6px,0.65vw,9px);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold)}
-.slide-headline{font-family:'Playfair Display',serif;font-size:clamp(8.5px,1.1vw,15px);font-weight:700;color:#1B2A4A;line-height:1.2}
-/* main content row */
-.slide-content{display:grid;grid-template-columns:1fr 1.3fr;gap:0;overflow:hidden}
-.slide-left{padding:clamp(8px,1.2vw,14px) clamp(12px,2vw,22px);display:flex;flex-direction:column;gap:clamp(5px,0.7vw,9px);border-right:1px solid #F0F2F5}
-.slide-body{font-size:clamp(6px,0.64vw,9px);color:#3D4A5C;line-height:1.7}
-.slide-recommendation{background:#FBF5EA;border-left:3px solid #C8922A;border-radius:0 3px 3px 0;padding:clamp(4px,0.45vw,6px) clamp(6px,0.8vw,10px);font-size:clamp(5.5px,0.6vw,8.5px);color:#7A5200;font-weight:500}
-.slide-tags{display:flex;flex-wrap:wrap;gap:clamp(3px,0.4vw,5px);margin-top:auto}
-.slide-tag{background:#EEF2F8;border-radius:3px;padding:clamp(2px,0.3vw,4px) clamp(4px,0.5vw,7px);font-size:clamp(5px,0.55vw,7.5px);color:#3A6EA8;font-weight:500}
-/* chart */
-.slide-right{padding:clamp(8px,1.2vw,14px) clamp(10px,1.6vw,18px);display:flex;flex-direction:column}
-.slide-chart{flex:1;display:flex;flex-direction:column}
-.chart-title{font-size:clamp(6px,0.64vw,9px);font-weight:600;color:#1B2A4A;margin-bottom:clamp(5px,0.7vw,9px);letter-spacing:0.02em}
-.chart-bars{display:flex;flex-direction:column;gap:clamp(3px,0.45vw,6px);flex:1}
-.chart-row{display:grid;grid-template-columns:clamp(48px,8vw,108px) 1fr clamp(22px,3vw,38px);align-items:center;gap:clamp(4px,0.5vw,7px)}
-.chart-label{font-size:clamp(5.5px,0.58vw,8px);color:#6B7A8D;text-align:right}
-.chart-bar-wrap{background:#E8EDF2;border-radius:20px;height:clamp(8px,1vw,13px);overflow:hidden}
+/* ── SLIDE: full 4-zone consulting layout ── */
+.ppt-slide{background:#FFFFFF;border-radius:4px;overflow:hidden;aspect-ratio:16/9;display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 2px 12px rgba(0,0,0,0.15);border:1px solid #E0E0E0;font-family:'DM Sans',sans-serif}
+/* Zone 1: Navy title band */
+.slide-title-band{background:#1B2A4A;padding:clamp(7px,1.1vw,13px) clamp(14px,2.2vw,26px);display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.slide-title-left{display:flex;flex-direction:column;gap:clamp(2px,0.3vw,4px)}
+.slide-eyebrow{font-size:clamp(5.5px,0.58vw,8px);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);opacity:0.9}
+.slide-headline{font-family:'Playfair Display',serif;font-size:clamp(9px,1.15vw,15px);font-weight:700;color:#FFFFFF;line-height:1.2}
+.slide-title-right{display:flex;gap:clamp(5px,0.8vw,10px);flex-shrink:0}
+.slide-title-kpi{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:clamp(4px,0.55vw,7px) clamp(7px,1vw,12px);text-align:center;min-width:clamp(40px,5.5vw,70px)}
+.stk-n{font-family:'Playfair Display',serif;font-size:clamp(10px,1.3vw,16px);font-weight:700;color:var(--gold);line-height:1}
+.stk-l{font-size:clamp(4.5px,0.5vw,7px);color:#A8C4E0;margin-top:2px;line-height:1.3}
+/* Zone 2: main 3-col body */
+.slide-body-grid{display:grid;grid-template-columns:1.1fr 1.4fr 1.1fr;gap:0;overflow:hidden}
+/* col 1: context */
+.slide-col{padding:clamp(7px,1.1vw,13px) clamp(10px,1.6vw,18px);display:flex;flex-direction:column;gap:clamp(5px,0.7vw,9px);border-right:1px solid #EEF2F6}
+.slide-col:last-child{border-right:none}
+.slide-col-label{font-size:clamp(5px,0.55vw,7.5px);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9BA8B5;margin-bottom:clamp(1px,0.2vw,3px)}
+.slide-col-text{font-size:clamp(5.5px,0.6vw,8.5px);color:#3D4A5C;line-height:1.7;flex:1}
+.slide-rec{background:#FBF5EA;border-left:3px solid #C8922A;border-radius:0 3px 3px 0;padding:clamp(4px,0.5vw,7px) clamp(6px,0.8vw,10px);font-size:clamp(5.5px,0.6vw,8px);color:#7A5200;font-weight:600;margin-top:auto}
+.slide-insight-list{display:flex;flex-direction:column;gap:clamp(4px,0.55vw,7px);flex:1}
+.slide-insight{display:flex;align-items:flex-start;gap:clamp(4px,0.5vw,7px)}
+.slide-insight-dot{width:clamp(4px,0.5vw,6px);height:clamp(4px,0.5vw,6px);border-radius:50%;background:#C8922A;flex-shrink:0;margin-top:clamp(3px,0.45vw,5px)}
+.slide-insight-text{font-size:clamp(5.5px,0.6vw,8.5px);color:#3D4A5C;line-height:1.6}
+/* col 2: chart */
+.chart-title{font-size:clamp(6px,0.62vw,8.5px);font-weight:600;color:#1B2A4A;margin-bottom:clamp(4px,0.6vw,8px);letter-spacing:0.02em}
+.chart-bars{display:flex;flex-direction:column;gap:clamp(2.5px,0.4vw,5px);flex:1}
+.chart-group-label{font-size:clamp(4.5px,0.5vw,7px);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#9BA8B5;margin-top:clamp(3px,0.45vw,6px);margin-bottom:clamp(1px,0.2vw,2px)}
+.chart-row{display:grid;grid-template-columns:clamp(55px,8.5vw,110px) 1fr clamp(22px,3vw,36px);align-items:center;gap:clamp(3px,0.45vw,6px)}
+.chart-label{font-size:clamp(5px,0.55vw,7.5px);color:#6B7A8D;text-align:right}
+.chart-bar-wrap{background:#E8EDF2;border-radius:20px;height:clamp(7px,0.9vw,12px);overflow:hidden}
 .chart-bar{height:100%;border-radius:20px}
-.chart-val{font-size:clamp(5.5px,0.6vw,8.5px);font-weight:600;color:#1B2A4A}
-.chart-divider{height:1px;background:#E8EDF2;margin:clamp(3px,0.45vw,5px) 0}
-.chart-legend{display:flex;gap:clamp(6px,1vw,12px);flex-wrap:wrap;margin-top:clamp(4px,0.55vw,8px)}
-.chart-legend-item{display:flex;align-items:center;gap:4px;font-size:clamp(5px,0.55vw,7.5px);color:#6B7A8D}
+.chart-val{font-size:clamp(5.5px,0.58vw,8px);font-weight:600;color:#1B2A4A}
+.chart-legend{display:flex;gap:clamp(5px,0.8vw,10px);flex-wrap:wrap;margin-top:clamp(4px,0.55vw,7px)}
+.chart-legend-item{display:flex;align-items:center;gap:3px;font-size:clamp(4.5px,0.52vw,7px);color:#6B7A8D}
 .chart-legend-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-/* KPI strip */
-.slide-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #E8EDF2}
-.slide-kpi-cell{padding:clamp(5px,0.75vw,10px) clamp(8px,1.2vw,14px);text-align:center;border-right:1px solid #E8EDF2;background:#FAFBFC}
-.slide-kpi-cell:last-child{border-right:none}
-.slide-kpi-n{font-family:'Playfair Display',serif;font-size:clamp(10px,1.3vw,17px);font-weight:700;line-height:1}
-.slide-kpi-l{font-size:clamp(5px,0.55vw,7.5px);color:#6B7A8D;margin-top:clamp(2px,0.3vw,3px);line-height:1.3}
-/* footer */
-.slide-bottom-bar{background:#1B2A4A;padding:clamp(4px,0.5vw,7px) clamp(14px,2vw,22px);display:flex;justify-content:space-between;align-items:center}
-.slide-footer-text{font-size:clamp(5px,0.55vw,7.5px);color:#A8C4E0}
+/* col 3: channel breakdown */
+.slide-channel-list{display:flex;flex-direction:column;gap:clamp(4px,0.6vw,8px);flex:1}
+.slide-channel-item{background:#F7F8FA;border:1px solid #EEF2F6;border-radius:4px;padding:clamp(4px,0.55vw,7px) clamp(6px,0.8vw,10px)}
+.sci-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(2px,0.3vw,3px)}
+.sci-name{font-size:clamp(5.5px,0.58vw,8px);font-weight:500;color:#1B2A4A}
+.sci-val{font-size:clamp(5.5px,0.6vw,8.5px);font-weight:700;color:#C8922A}
+.sci-bar-wrap{background:#E8EDF2;border-radius:20px;height:clamp(5px,0.65vw,8px);overflow:hidden}
+.sci-bar{height:100%;border-radius:20px;background:#1B2A4A}
+/* Zone 3: footer */
+.slide-bottom-bar{background:#1B2A4A;padding:clamp(4px,0.5vw,6px) clamp(14px,2vw,22px);display:flex;justify-content:space-between;align-items:center}
+.slide-footer-text{font-size:clamp(4.5px,0.52vw,7.5px);color:#A8C4E0}
 .ppt-statusbar{background:#2B2B2B;padding:4px 12px;display:flex;justify-content:space-between;align-items:center}
 .ppt-status-text{font-size:10px;color:#A0A0A0}
 
@@ -644,86 +654,129 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
       </div>
       <div class="ppt-slide-area">
         <div class="ppt-slide">
-          <div class="slide-top-accent"></div>
 
-          <!-- Header row -->
-          <div class="slide-header">
-            <div class="slide-eyebrow">Project Meridian &nbsp;·&nbsp; 6-month progress review &nbsp;·&nbsp; June 2024</div>
-            <div class="slide-headline">Programme is on track. Data supports proceeding to Phase 2.</div>
-          </div>
-
-          <!-- Main content row -->
-          <div class="slide-content">
-            <div class="slide-left">
-              <div class="slide-body">Three of four workstreams completed Phase 1 on schedule. Employee awareness reached 80%, above the 70% target set at launch. The communications cadence established in Q1 has held without a single leadership escalation since February.</div>
-              <div class="slide-recommendation">Recommendation: proceed to Phase 2 as planned in July</div>
-              <div class="slide-tags" style="margin-top:auto">
-                <span class="slide-tag">Change Communications</span>
-                <span class="slide-tag">Employee Engagement</span>
-                <span class="slide-tag">Programme Governance</span>
-                <span class="slide-tag">Internal Comms</span>
-              </div>
+          <!-- Zone 1: Navy title band with inline KPIs -->
+          <div class="slide-title-band">
+            <div class="slide-title-left">
+              <div class="slide-eyebrow">Project Meridian &nbsp;·&nbsp; Leadership Review &nbsp;·&nbsp; June 2024</div>
+              <div class="slide-headline">Programme is on track. Data supports proceeding to Phase 2 as planned.</div>
             </div>
-            <div class="slide-right">
-              <div class="slide-chart">
-                <div class="chart-title">Employee engagement metrics: programme launch vs 6 months</div>
-                <div class="chart-bars">
-                  <div class="chart-row">
-                    <div class="chart-label">Awareness — now</div>
-                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:80%;background:#1B2A4A"></div></div>
-                    <div class="chart-val">80%</div>
-                  </div>
-                  <div class="chart-row">
-                    <div class="chart-label">Awareness — target</div>
-                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:70%;background:#A8C4E0"></div></div>
-                    <div class="chart-val">70%</div>
-                  </div>
-                  <div class="chart-divider"></div>
-                  <div class="chart-row">
-                    <div class="chart-label">Survey response — now</div>
-                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:68%;background:#1B2A4A"></div></div>
-                    <div class="chart-val">68%</div>
-                  </div>
-                  <div class="chart-row">
-                    <div class="chart-label">Survey response — launch</div>
-                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:52%;background:#A8C4E0"></div></div>
-                    <div class="chart-val">52%</div>
-                  </div>
-                  <div class="chart-divider"></div>
-                  <div class="chart-row">
-                    <div class="chart-label">Town hall attendance — now</div>
-                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:65%;background:#C8922A"></div></div>
-                    <div class="chart-val">65%</div>
-                  </div>
-                  <div class="chart-row">
-                    <div class="chart-label">Town hall attendance — launch</div>
-                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:48%;background:#E8D5A8"></div></div>
-                    <div class="chart-val">48%</div>
-                  </div>
-                </div>
-                <div class="chart-divider"></div>
-                <div class="chart-legend">
-                  <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1B2A4A"></div>Current</div>
-                  <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#A8C4E0"></div>Baseline / Target</div>
-                  <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#C8922A"></div>Attendance</div>
-                </div>
-              </div>
+            <div class="slide-title-right">
+              <div class="slide-title-kpi"><div class="stk-n">3/4</div><div class="stk-l">Workstreams Phase 1 complete</div></div>
+              <div class="slide-title-kpi"><div class="stk-n" style="color:#2ECC9A">~80%</div><div class="stk-l">Awareness vs 70% target</div></div>
+              <div class="slide-title-kpi"><div class="stk-n">+16pp</div><div class="stk-l">Survey response uplift</div></div>
+              <div class="slide-title-kpi"><div class="stk-n" style="color:#2ECC9A">0</div><div class="stk-l">Leadership escalations</div></div>
             </div>
           </div>
 
-          <!-- KPI strip -->
-          <div class="slide-kpi-strip">
-            <div class="slide-kpi-cell"><div class="slide-kpi-n" style="color:#1B2A4A">3 of 4</div><div class="slide-kpi-l">Workstreams: Phase 1 complete</div></div>
-            <div class="slide-kpi-cell"><div class="slide-kpi-n" style="color:#C8922A">~80%</div><div class="slide-kpi-l">Awareness vs 70% target</div></div>
-            <div class="slide-kpi-cell"><div class="slide-kpi-n" style="color:#1F7A5C">+16pp</div><div class="slide-kpi-l">Survey response improvement</div></div>
-            <div class="slide-kpi-cell"><div class="slide-kpi-n" style="color:#1B2A4A">0</div><div class="slide-kpi-l">Leadership escalations this quarter</div></div>
+          <!-- Zone 2: 3-column body -->
+          <div class="slide-body-grid">
+
+            <!-- Col 1: Context and recommendation -->
+            <div class="slide-col">
+              <div class="slide-col-label">Context</div>
+              <div class="slide-col-text">Three of four workstreams completed Phase 1 on schedule. Employee awareness reached 80%, exceeding the 70% launch target. The communications cadence has held without escalation since February.</div>
+              <div class="slide-col-label" style="margin-top:auto;padding-top:clamp(5px,0.7vw,9px)">Key findings</div>
+              <div class="slide-insight-list">
+                <div class="slide-insight"><div class="slide-insight-dot"></div><div class="slide-insight-text">Pulse survey response improved 16pp since launch, driven by consistent message cadence and reduced send frequency</div></div>
+                <div class="slide-insight"><div class="slide-insight-dot"></div><div class="slide-insight-text">Town hall attendance grew from 48% to 65%, with post-event comms sustaining engagement between sessions</div></div>
+                <div class="slide-insight"><div class="slide-insight-dot"></div><div class="slide-insight-text">Manager cascade programme reduced reactive queries to HR by approximately 30%</div></div>
+              </div>
+              <div class="slide-rec">Recommendation: proceed to Phase 2 in July as planned</div>
+            </div>
+
+            <!-- Col 2: Bar chart -->
+            <div class="slide-col">
+              <div class="chart-title">Employee engagement: programme launch vs 6-month mark</div>
+              <div class="chart-bars">
+                <div class="chart-group-label">Awareness</div>
+                <div class="chart-row">
+                  <div class="chart-label">Now</div>
+                  <div class="chart-bar-wrap"><div class="chart-bar" style="width:80%;background:#1B2A4A"></div></div>
+                  <div class="chart-val">80%</div>
+                </div>
+                <div class="chart-row">
+                  <div class="chart-label">At launch</div>
+                  <div class="chart-bar-wrap"><div class="chart-bar" style="width:58%;background:#A8C4E0"></div></div>
+                  <div class="chart-val">58%</div>
+                </div>
+                <div class="chart-group-label">Pulse survey response</div>
+                <div class="chart-row">
+                  <div class="chart-label">Now</div>
+                  <div class="chart-bar-wrap"><div class="chart-bar" style="width:68%;background:#1B2A4A"></div></div>
+                  <div class="chart-val">68%</div>
+                </div>
+                <div class="chart-row">
+                  <div class="chart-label">At launch</div>
+                  <div class="chart-bar-wrap"><div class="chart-bar" style="width:52%;background:#A8C4E0"></div></div>
+                  <div class="chart-val">52%</div>
+                </div>
+                <div class="chart-group-label">Town hall attendance</div>
+                <div class="chart-row">
+                  <div class="chart-label">Now</div>
+                  <div class="chart-bar-wrap"><div class="chart-bar" style="width:65%;background:#C8922A"></div></div>
+                  <div class="chart-val">65%</div>
+                </div>
+                <div class="chart-row">
+                  <div class="chart-label">At launch</div>
+                  <div class="chart-bar-wrap"><div class="chart-bar" style="width:48%;background:#E8D5A8"></div></div>
+                  <div class="chart-val">48%</div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1B2A4A"></div>6-month mark</div>
+                <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#A8C4E0"></div>At launch</div>
+                <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#C8922A"></div>Town hall</div>
+              </div>
+            </div>
+
+            <!-- Col 3: Channel breakdown -->
+            <div class="slide-col">
+              <div class="slide-col-label">Communications channels: reach by format</div>
+              <div class="slide-channel-list">
+                <div class="slide-channel-item">
+                  <div class="sci-header"><div class="sci-name">Email broadcast</div><div class="sci-val">92%</div></div>
+                  <div class="sci-bar-wrap"><div class="sci-bar" style="width:92%"></div></div>
+                </div>
+                <div class="slide-channel-item">
+                  <div class="sci-header"><div class="sci-name">Intranet (SharePoint)</div><div class="sci-val">78%</div></div>
+                  <div class="sci-bar-wrap"><div class="sci-bar" style="width:78%"></div></div>
+                </div>
+                <div class="slide-channel-item">
+                  <div class="sci-header"><div class="sci-name">Town halls</div><div class="sci-val">65%</div></div>
+                  <div class="sci-bar-wrap"><div class="sci-bar" style="width:65%"></div></div>
+                </div>
+                <div class="slide-channel-item">
+                  <div class="sci-header"><div class="sci-name">Manager cascade</div><div class="sci-val">61%</div></div>
+                  <div class="sci-bar-wrap"><div class="sci-bar" style="width:61%"></div></div>
+                </div>
+                <div class="slide-channel-item">
+                  <div class="sci-header"><div class="sci-name">Microsoft Teams</div><div class="sci-val">54%</div></div>
+                  <div class="sci-bar-wrap"><div class="sci-bar" style="width:54%"></div></div>
+                </div>
+              </div>
+              <div class="slide-col-label" style="margin-top:clamp(5px,0.7vw,9px)">Phase 2 timeline</div>
+              <div style="background:#F7F8FA;border:1px solid #EEF2F6;border-radius:4px;padding:clamp(4px,0.55vw,7px) clamp(6px,0.8vw,10px)">
+                <div style="display:flex;justify-content:space-between;margin-bottom:clamp(3px,0.4vw,5px)">
+                  <span style="font-size:clamp(5px,0.55vw,7.5px);color:#6B7A8D">Kick-off</span>
+                  <span style="font-size:clamp(5px,0.55vw,7.5px);color:#6B7A8D">Midpoint</span>
+                  <span style="font-size:clamp(5px,0.55vw,7.5px);color:#6B7A8D">Close</span>
+                </div>
+                <div style="background:#E8EDF2;border-radius:20px;height:clamp(6px,0.75vw,10px);overflow:hidden;position:relative">
+                  <div style="width:0%;height:100%;background:#1B2A4A;border-radius:20px"></div>
+                  <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;padding:0 clamp(4px,0.5vw,7px)"><span style="font-size:clamp(4px,0.45vw,6.5px);color:#9BA8B5;font-weight:500">Commences July 2024</span></div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Footer -->
+          <!-- Zone 3: Footer -->
           <div class="slide-bottom-bar">
-            <div class="slide-footer-text">Project Meridian &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Leadership Review June 2024</div>
-            <div class="slide-footer-text">Slide 4 of 12</div>
+            <div class="slide-footer-text">Project Meridian &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; For leadership review only</div>
+            <div class="slide-footer-text">Prepared by: Communications Lead &nbsp;·&nbsp; Slide 4 of 12</div>
           </div>
+
         </div>
       </div>
     </div>
