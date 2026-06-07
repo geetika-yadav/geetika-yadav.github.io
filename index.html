@@ -12,45 +12,129 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem)}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);letter-spacing:0.01em;text-decoration:none}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-muted);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--navy)}
 .nav-links a.active{color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem clamp(1.5rem,5vw,4rem) 5rem;gap:4rem;max-width:1200px;margin:0 auto}
-.hero-photo-wrap{margin-bottom:1.75rem}
-.hero-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid var(--white);box-shadow:0 0 0 4px var(--gold);display:block}
-.hero-photo-placeholder{width:160px;height:160px;border-radius:50%;background:var(--off);border:4px solid var(--white);box-shadow:0 0 0 4px var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--navy)}
-.hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
-.hero-eyebrow::before{content:'';display:block;width:32px;height:1.5px;background:var(--gold)}
-.hero-role{font-size:1rem;font-weight:400;color:var(--ink-muted);margin-bottom:2rem;letter-spacing:0.01em}
-.hero-tagline{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2vw,1.45rem);font-style:italic;color:var(--ink-mid);line-height:1.5;border-left:3px solid var(--gold);padding-left:1.25rem;margin-bottom:2.5rem;max-width:480px}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
-.btn-primary{background:var(--navy);color:var(--white);font-size:0.88rem;font-weight:500;padding:0.75rem 2rem;border-radius:4px;text-decoration:none;letter-spacing:0.03em;transition:background .2s,transform .15s}
-.btn-primary:hover{background:#243355;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--navy);font-size:0.88rem;font-weight:500;padding:0.73rem 2rem;border-radius:4px;border:1.5px solid var(--border);text-decoration:none;transition:border-color .2s,transform .15s}
-.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.hero-stat{background:var(--white);padding:1rem 1.25rem}
-.hero-stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--navy);line-height:1}
-.hero-stat-label{font-size:0.72rem;color:var(--ink-muted);margin-top:3px;line-height:1.4}
-.hero-right{position:relative}
-.hero-card-stack{position:relative;height:420px}
-.hcard{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;box-shadow:0 4px 24px rgba(26,31,46,0.07)}
-.hcard-1{top:0;right:0;width:88%;z-index:3}
-.hcard-2{top:55px;right:24px;width:80%;z-index:2;opacity:.55;transform:scale(0.97)}
-.hcard-3{top:100px;right:44px;width:72%;z-index:1;opacity:.25;transform:scale(0.94)}
-.hcard-label{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
-.hcard-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;line-height:1.3}
-.hcard-body{font-size:0.82rem;color:var(--ink-muted);line-height:1.6}
-.hcard-tag{display:inline-block;margin-top:0.75rem;font-size:0.7rem;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--sky-light);color:var(--sky)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:stretch;
+  max-width:1280px;
+  margin:0 auto;
+  padding-top:58px; /* nav height */
+}
+
+/* Left column: navy background, full height */
+.hero-left{
+  background:var(--navy);
+  padding:clamp(3rem,6vw,5rem) clamp(2rem,5vw,4rem);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:0;
+  position:relative;
+  overflow:hidden;
+}
+/* decorative dot grid */
+.hero-left::after{
+  content:'';position:absolute;top:0;right:0;width:50%;height:100%;
+  background-image:radial-gradient(circle,rgba(91,141,184,0.18) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;
+}
+.hero-left-accent{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* Photo + name row */
+.hero-identity{display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem}
+.hero-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.15);box-shadow:0 0 0 3px var(--gold);display:block;flex-shrink:0}
+.hero-photo-placeholder{width:80px;height:80px;border-radius:50%;background:var(--navy-mid);border:3px solid rgba(255,255,255,0.15);box-shadow:0 0 0 3px var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold);flex-shrink:0}
+.hero-name-block{}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:0.2rem}
+.hero-role{font-size:0.82rem;color:rgba(168,196,224,0.85);letter-spacing:0.02em}
+
+/* Tagline */
+.hero-tagline{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.2rem,2.2vw,1.55rem);
+  font-style:italic;
+  color:var(--white);
+  line-height:1.45;
+  border-left:3px solid var(--gold);
+  padding-left:1.25rem;
+  margin-bottom:2rem;
+  position:relative;z-index:1;
+}
+
+/* Skill tags */
+.hero-skills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;position:relative;z-index:1}
+.hero-skill{font-size:0.75rem;font-weight:500;color:rgba(168,196,224,0.9);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:4px 12px}
+
+/* Stats row */
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden;margin-bottom:2rem;position:relative;z-index:1}
+.hero-stat{background:rgba(255,255,255,0.04);padding:0.9rem 1rem}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold);line-height:1}
+.hero-stat-label{font-size:0.7rem;color:rgba(168,196,224,0.75);margin-top:2px;line-height:1.35}
+
+/* CTA buttons */
+.hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap;position:relative;z-index:1}
+.btn-primary{background:var(--gold);color:var(--navy);font-size:0.85rem;font-weight:600;padding:0.7rem 1.75rem;border-radius:4px;text-decoration:none;letter-spacing:0.02em;transition:background .2s,transform .15s}
+.btn-primary:hover{background:#D9A030;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:rgba(168,196,224,0.9);font-size:0.85rem;font-weight:500;padding:0.68rem 1.75rem;border-radius:4px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;transition:border-color .2s,color .2s,transform .15s}
+.btn-outline:hover{border-color:rgba(255,255,255,0.5);color:var(--white);transform:translateY(-2px)}
+
+/* Right column: white, content cards */
+.hero-right{
+  background:var(--off);
+  padding:clamp(3rem,6vw,5rem) clamp(2rem,5vw,4rem);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:1.25rem;
+}
+.hero-right-label{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:0.25rem}
+.hero-right-label::before{content:'';display:block;width:20px;height:1.5px;background:var(--gold)}
+.hero-right-title{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2vw,1.55rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:1.25rem}
+
+/* Project cards on right */
+.hproject-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;border-left:3px solid transparent;transition:box-shadow .2s,border-color .2s}
+.hproject-card:hover{box-shadow:0 6px 24px rgba(26,31,46,0.08);border-left-color:var(--gold)}
+.hproject-card.featured{border-left-color:var(--gold)}
+.hpc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem}
+.hpc-tag{font-size:0.68rem;font-weight:500;padding:2px 10px;border-radius:20px}
+.hpc-period{font-size:0.72rem;color:var(--ink-muted)}
+.hpc-title{font-size:0.95rem;font-weight:500;color:var(--navy);line-height:1.35;margin-bottom:0.4rem}
+.hpc-body{font-size:0.82rem;color:var(--ink-muted);line-height:1.6;margin-bottom:0.6rem}
+.hpc-stats{display:flex;gap:1rem;flex-wrap:wrap}
+.hpc-stat{font-size:0.75rem;color:var(--ink-mid)}
+.hpc-stat strong{color:var(--navy);font-weight:500}
+
+/* Explore strip at bottom of right col */
+.hero-explore{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:0.25rem}
+.hex-card{display:block;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;text-decoration:none;transition:box-shadow .2s,transform .2s;position:relative;overflow:hidden}
+.hex-card:hover{box-shadow:0 6px 20px rgba(26,31,46,0.08);transform:translateY(-2px)}
+.hex-accent{position:absolute;top:0;left:0;right:0;height:2.5px}
+.hex-label{font-size:0.68rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.25rem}
+.hex-title{font-size:0.88rem;font-weight:500;color:var(--navy);margin-bottom:0.2rem}
+.hex-cta{font-size:0.75rem;color:var(--sky);display:flex;align-items:center;gap:5px;margin-top:0.35rem}
+.hex-cta::after{content:'→';transition:transform .2s}
+.hex-card:hover .hex-cta::after{transform:translateX(3px)}
+
+/* SHARED */
 .section{padding:5rem clamp(1.5rem,5vw,4rem)}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-kicker{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
 .section-kicker::before{content:'';display:block;width:24px;height:1.5px;background:var(--gold)}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:0.75rem}
 .section-sub{font-size:0.95rem;color:var(--ink-muted);max-width:560px;line-height:1.7;margin-bottom:3rem}
+
+/* ABOUT */
 .about-section{background:var(--off)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-text p{font-size:0.97rem;color:var(--ink-mid);line-height:1.8;margin-bottom:1rem}
@@ -64,16 +148,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .cred-title{font-size:1rem;font-weight:500;color:var(--navy);margin-bottom:0.15rem}
 .cred-period{font-size:0.8rem;color:var(--ink-muted)}
 .cred-detail{font-size:0.85rem;color:var(--ink-mid);margin-top:0.35rem;line-height:1.6}
-.nav-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
-.nav-card{display:block;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;text-decoration:none;transition:box-shadow .25s,transform .25s;position:relative;overflow:hidden}
-.nav-card:hover{box-shadow:0 12px 32px rgba(26,31,46,0.1);transform:translateY(-3px)}
-.nav-card-accent{position:absolute;top:0;left:0;right:0;height:3px}
-.nav-card-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.5rem}
-.nav-card-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem}
-.nav-card-desc{font-size:0.88rem;color:var(--ink-muted);line-height:1.65;margin-bottom:1.25rem}
-.nav-card-cta{font-size:0.82rem;font-weight:500;color:var(--sky);display:flex;align-items:center;gap:6px}
-.nav-card-cta::after{content:'→';transition:transform .2s}
-.nav-card:hover .nav-card-cta::after{transform:translateX(4px)}
+
+/* CONTACT / FOOTER */
 .contact-section{background:var(--navy);padding:3.5rem clamp(1.5rem,5vw,4rem)}
 .contact-inner{max-width:640px;margin:0 auto;text-align:center}
 .contact-kicker{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:10px}
@@ -89,16 +165,26 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{font-size:.78rem;color:#3A4A5C;text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#6B7A8D}
+
+/* ANIMATIONS */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:none}
 .reveal-delay-1{transition-delay:.1s}
 .reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
-@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:6rem}.hero-right,.hero-stats{display:none}.about-grid{grid-template-columns:1fr}.nav-cards{grid-template-columns:1fr}.nav-links{display:none}}
-@media(max-width:560px){.skills-grid{grid-template-columns:1fr}}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero-explore{grid-template-columns:1fr}
+}
+@media(max-width:560px){.skills-grid{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
+
 <nav>
   <a class="nav-logo" href="index.html">Geetika Yadav</a>
   <ul class="nav-links">
@@ -109,39 +195,120 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
   </ul>
 </nav>
 
+<!-- HERO: full-height two-column split -->
 <section class="hero">
+
+  <!-- LEFT: navy panel -->
   <div class="hero-left">
-    <div class="hero-photo-wrap reveal">
-      <img class="hero-photo" src="profile.png" alt="Geetika Yadav" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="hero-left-accent"></div>
+
+    <!-- Identity row: photo + name -->
+    <div class="hero-identity reveal">
+      <img class="hero-photo" src="profile.png" alt="Geetika Yadav"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="hero-photo-placeholder" style="display:none">GY</div>
+      <div class="hero-name-block">
+        <div class="hero-name">Geetika Yadav</div>
+        <div class="hero-role">Communications &amp; Content Lead &nbsp;·&nbsp; Delhi NCR</div>
+      </div>
     </div>
-    <div class="hero-eyebrow reveal">Communications Professional</div>
-    <p class="hero-role reveal reveal-delay-1">Executive Communications &nbsp;·&nbsp; Content Strategy &nbsp;·&nbsp; Delhi NCR</p>
-    <blockquote class="hero-tagline reveal reveal-delay-2">Ten years of turning organisational complexity into communication people actually read.</blockquote>
+
+    <!-- Tagline -->
+    <blockquote class="hero-tagline reveal reveal-delay-1">
+      Ten years of turning organisational complexity into communication people actually read.
+    </blockquote>
+
+    <!-- Skills -->
+    <div class="hero-skills reveal reveal-delay-1">
+      <span class="hero-skill">Executive Communications</span>
+      <span class="hero-skill">Change Communications</span>
+      <span class="hero-skill">Content Strategy</span>
+      <span class="hero-skill">SharePoint</span>
+      <span class="hero-skill">Employer Branding</span>
+      <span class="hero-skill">Stakeholder Management</span>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats reveal reveal-delay-2">
+      <div class="hero-stat">
+        <div class="hero-stat-num">10+</div>
+        <div class="hero-stat-label">Years in communications</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2,000+</div>
+        <div class="hero-stat-label">Employees reached</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">~80%</div>
+        <div class="hero-stat-label">Programme awareness score</div>
+      </div>
+    </div>
+
+    <!-- CTAs -->
     <div class="hero-actions reveal reveal-delay-2">
       <a class="btn-primary" href="projects.html">View projects</a>
       <a class="btn-outline" href="samples.html">Work samples</a>
     </div>
-    <div class="hero-stats reveal reveal-delay-3">
-      <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Years in communications</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">2,000+</div><div class="hero-stat-label">Employees reached</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">~80%</div><div class="hero-stat-label">Programme awareness score</div></div>
-    </div>
+
   </div>
-  <div class="hero-right reveal">
-    <div class="hero-card-stack">
-      <div class="hcard hcard-1">
-        <div class="hcard-label">Featured project</div>
-        <div class="hcard-title">COVID-19 Transition Programme: 12-month change communications</div>
-        <div class="hcard-body">50+ targeted communications across 5 channels for 2,000+ employees. Sustained an awareness score of approximately 80% throughout.</div>
-        <span class="hcard-tag">Change communications</span>
-      </div>
-      <div class="hcard hcard-2"></div>
-      <div class="hcard hcard-3"></div>
+
+  <!-- RIGHT: off-white panel with project cards + explore links -->
+  <div class="hero-right">
+
+    <div>
+      <div class="hero-right-label">Featured work</div>
+      <div class="hero-right-title">Selected projects and samples</div>
     </div>
+
+    <!-- Project card 1 — featured -->
+    <div class="hproject-card featured reveal">
+      <div class="hpc-top">
+        <span class="hpc-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Change communications</span>
+        <span class="hpc-period">Genpact &nbsp;·&nbsp; 2020–2021</span>
+      </div>
+      <div class="hpc-title">COVID-19 Transition Programme: 12-month enterprise change communications</div>
+      <div class="hpc-body">Led communications for a 2,000+ employee organisation across five channels simultaneously, through the most sustained change communications effort of my career.</div>
+      <div class="hpc-stats">
+        <div class="hpc-stat"><strong>50+</strong> targeted comms delivered</div>
+        <div class="hpc-stat"><strong>~80%</strong> awareness score sustained</div>
+        <div class="hpc-stat"><strong>68%</strong> survey response rate</div>
+      </div>
+    </div>
+
+    <!-- Project card 2 -->
+    <div class="hproject-card reveal reveal-delay-1">
+      <div class="hpc-top">
+        <span class="hpc-tag" style="background:var(--sky-light);color:#1A4A7A;border:1px solid #5B8DB8">Executive comms</span>
+        <span class="hpc-period">Genpact &nbsp;·&nbsp; 2016–2023</span>
+      </div>
+      <div class="hpc-title">Annual town hall programme: end-to-end event communications</div>
+      <div class="hpc-body">Six town halls annually, consistently achieving 65%+ attendance across 2,000+ employees with full ownership from brief to post-event communications.</div>
+      <div class="hpc-stats">
+        <div class="hpc-stat"><strong>65%+</strong> consistent attendance</div>
+        <div class="hpc-stat"><strong>15+</strong> assets per month</div>
+      </div>
+    </div>
+
+    <!-- Explore links -->
+    <div class="hero-explore reveal reveal-delay-2">
+      <a class="hex-card" href="projects.html">
+        <div class="hex-accent" style="background:var(--gold)"></div>
+        <div class="hex-label">Projects</div>
+        <div class="hex-title">Work I have led and delivered</div>
+        <div class="hex-cta">View all projects</div>
+      </a>
+      <a class="hex-card" href="samples.html">
+        <div class="hex-accent" style="background:var(--sky)"></div>
+        <div class="hex-label">Work Samples</div>
+        <div class="hex-title">Six samples in native format</div>
+        <div class="hex-cta">View work samples</div>
+      </a>
+    </div>
+
   </div>
 </section>
 
+<!-- ABOUT -->
 <section class="section about-section" id="about">
   <div class="section-inner">
     <div class="about-grid">
@@ -194,27 +361,6 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
         <div style="font-size:.85rem;color:var(--ink-mid);line-height:1.9">Microsoft PowerPoint &nbsp;·&nbsp; SharePoint &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Teams &nbsp;·&nbsp; Viva Engage &nbsp;·&nbsp; Canva &nbsp;·&nbsp; Survey Platforms &nbsp;·&nbsp; Excel</div>
       </div>
     </div>
-
-    <div style="margin-top:4rem;border-top:1px solid var(--border);padding-top:3rem">
-      <div class="section-kicker reveal">Explore</div>
-      <h2 class="section-title reveal">Projects and work samples</h2>
-      <div class="nav-cards reveal">
-        <a class="nav-card" href="projects.html">
-          <div class="nav-card-accent" style="background:var(--gold)"></div>
-          <div class="nav-card-label">Projects</div>
-          <div class="nav-card-title">Work I have led and delivered</div>
-          <div class="nav-card-desc">Three real projects from my career at Genpact, each described with full context, my role, and the outcomes achieved. Change communications, town hall programmes, and SharePoint intranet.</div>
-          <div class="nav-card-cta">View projects</div>
-        </a>
-        <a class="nav-card" href="samples.html">
-          <div class="nav-card-accent" style="background:var(--sky)"></div>
-          <div class="nav-card-label">Work Samples</div>
-          <div class="nav-card-title">How I approach the work</div>
-          <div class="nav-card-desc">Six original samples rendered in their actual delivery format: emails as they appear in Outlook, newsletters as they land in an inbox, slides as they look in PowerPoint. Brief, approach, and output for each.</div>
-          <div class="nav-card-cta">View work samples</div>
-        </a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -231,6 +377,7 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     </div>
   </div>
 </div>
+
 <footer>
   <div class="footer-copy">© 2025 Geetika Yadav &nbsp;·&nbsp; Communications and Content Professional &nbsp;·&nbsp; Delhi NCR</div>
   <div class="footer-links">
@@ -239,6 +386,7 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     <a href="mailto:geetika.yadav@outlook.in">Email</a>
   </div>
 </footer>
+
 <script>
 const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
