@@ -145,26 +145,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 /* The actual slide — light theme */
 .ppt-slide{background:#FFFFFF;border-radius:4px;overflow:hidden;aspect-ratio:16/9;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.15);border:1px solid #E0E0E0}
 .slide-top-accent{height:5px;background:#1B2A4A}
-.slide-content{flex:1;padding:clamp(10px,2vw,22px) clamp(14px,2.5vw,30px);display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(10px,2vw,24px);align-items:start}
-.slide-left{}
-.slide-eyebrow{font-size:clamp(7px,0.75vw,9px);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(4px,0.6vw,8px)}
-.slide-headline{font-family:'Playfair Display',serif;font-size:clamp(10px,1.3vw,17px);font-weight:700;color:#1B2A4A;line-height:1.25;margin-bottom:clamp(5px,0.8vw,12px)}
-.slide-body{font-size:clamp(6.5px,0.68vw,9.5px);color:#3D4A5C;line-height:1.65;margin-bottom:clamp(6px,0.8vw,12px)}
-.slide-recommendation{background:#F7F8FA;border-left:3px solid #C8922A;border-radius:0 4px 4px 0;padding:clamp(4px,0.5vw,8px) clamp(6px,0.8vw,12px);font-size:clamp(6px,0.65vw,9px);color:#1B2A4A;font-weight:500}
+.slide-content{flex:1;padding:clamp(10px,1.8vw,20px) clamp(14px,2.5vw,28px) 0;display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(10px,1.8vw,22px);align-items:start}
+.slide-left{display:flex;flex-direction:column;height:100%}
+.slide-eyebrow{font-size:clamp(6.5px,0.7vw,9px);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(4px,0.5vw,7px)}
+.slide-headline{font-family:'Playfair Display',serif;font-size:clamp(9px,1.2vw,16px);font-weight:700;color:#1B2A4A;line-height:1.25;margin-bottom:clamp(4px,0.7vw,10px)}
+.slide-body{font-size:clamp(6px,0.65vw,9px);color:#3D4A5C;line-height:1.65;margin-bottom:clamp(5px,0.7vw,10px)}
+.slide-recommendation{background:#FBF5EA;border-left:3px solid #C8922A;border-radius:0 4px 4px 0;padding:clamp(4px,0.45vw,7px) clamp(6px,0.75vw,10px);font-size:clamp(5.5px,0.62vw,8.5px);color:#1B2A4A;font-weight:500;margin-bottom:clamp(4px,0.6vw,9px)}
+.slide-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(4px,0.5vw,8px)}
+.slide-kpi-box{background:#F7F8FA;border:1px solid #E8EDF2;border-radius:5px;padding:clamp(4px,0.55vw,8px) clamp(5px,0.7vw,10px);text-align:center}
+.slide-kpi-box-n{font-family:'Playfair Display',serif;font-size:clamp(11px,1.4vw,18px);font-weight:700;color:#1B2A4A;line-height:1}
+.slide-kpi-box-l{font-size:clamp(5px,0.56vw,7.5px);color:#6B7A8D;margin-top:2px;line-height:1.3}
 /* bar chart */
-.slide-chart{background:#F7F8FA;border:1px solid #E8EDF2;border-radius:6px;padding:clamp(8px,1vw,14px);height:100%}
-.chart-title{font-size:clamp(6.5px,0.68vw,9.5px);font-weight:600;color:#1B2A4A;margin-bottom:clamp(6px,0.8vw,12px);letter-spacing:0.02em}
-.chart-bars{display:flex;flex-direction:column;gap:clamp(4px,0.6vw,8px)}
-.chart-row{display:grid;grid-template-columns:clamp(50px,8vw,110px) 1fr clamp(24px,3vw,40px);align-items:center;gap:clamp(4px,0.6vw,8px)}
-.chart-label{font-size:clamp(6px,0.62vw,9px);color:#6B7A8D;text-align:right}
-.chart-bar-wrap{background:#E8EDF2;border-radius:20px;height:clamp(10px,1.2vw,16px);overflow:hidden}
-.chart-bar{height:100%;border-radius:20px;transition:width .8s ease}
-.chart-val{font-size:clamp(6.5px,0.68vw,9.5px);font-weight:600;color:#1B2A4A}
-.chart-legend{display:flex;gap:clamp(6px,1vw,14px);margin-top:clamp(6px,0.8vw,12px);flex-wrap:wrap}
-.chart-legend-item{display:flex;align-items:center;gap:4px;font-size:clamp(5.5px,0.6vw,8px);color:#6B7A8D}
-.chart-legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.slide-footer{background:#F7F8FA;border-top:1px solid #E8EDF2;padding:clamp(3px,0.4vw,6px) clamp(14px,2vw,24px);display:flex;justify-content:space-between;align-items:center}
-.slide-footer-text{font-size:clamp(6px,0.58vw,8.5px);color:#9BA8B5}
+.slide-chart{background:#F7F8FA;border:1px solid #E8EDF2;border-radius:6px;padding:clamp(8px,0.9vw,13px)}
+.chart-title{font-size:clamp(6.5px,0.68vw,9.5px);font-weight:600;color:#1B2A4A;margin-bottom:clamp(5px,0.7vw,10px);letter-spacing:0.02em}
+.chart-bars{display:flex;flex-direction:column;gap:clamp(4px,0.55vw,8px)}
+.chart-row{display:grid;grid-template-columns:clamp(52px,8.5vw,115px) 1fr clamp(26px,3.2vw,44px);align-items:center;gap:clamp(4px,0.55vw,7px)}
+.chart-label{font-size:clamp(5.5px,0.6vw,8.5px);color:#6B7A8D;text-align:right}
+.chart-bar-wrap{background:#E8EDF2;border-radius:20px;height:clamp(9px,1.1vw,14px);overflow:hidden}
+.chart-bar{height:100%;border-radius:20px}
+.chart-val{font-size:clamp(6px,0.65vw,9px);font-weight:600;color:#1B2A4A}
+.chart-divider{height:1px;background:#E8EDF2;margin:clamp(4px,0.6vw,8px) 0}
+.chart-legend{display:flex;gap:clamp(6px,1vw,14px);flex-wrap:wrap}
+.chart-legend-item{display:flex;align-items:center;gap:4px;font-size:clamp(5px,0.58vw,8px);color:#6B7A8D}
+.chart-legend-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.slide-bottom-bar{background:#1B2A4A;padding:clamp(5px,0.7vw,9px) clamp(14px,2vw,24px);display:flex;justify-content:space-between;align-items:center}
+.slide-footer-text{font-size:clamp(5.5px,0.58vw,8px);color:#A8C4E0}
 .ppt-statusbar{background:#2B2B2B;padding:4px 12px;display:flex;justify-content:space-between;align-items:center}
 .ppt-status-text{font-size:10px;color:#A0A0A0}
 
@@ -635,12 +640,17 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
             <div class="slide-left">
               <div class="slide-eyebrow">Project Meridian &nbsp;·&nbsp; 6-month progress review</div>
               <div class="slide-headline">Programme is on track. Data supports proceeding to Phase 2.</div>
-              <div class="slide-body">Three of four workstreams have completed Phase 1 on schedule. Employee awareness sits at 80%, above the 70% target. The communications cadence established in Q1 has held without escalation since February.</div>
+              <div class="slide-body">Three of four workstreams completed Phase 1 on schedule. Employee awareness reached 80%, above the 70% target set at launch. Communications cadence has held without escalation since February.</div>
               <div class="slide-recommendation">Recommendation: proceed to Phase 2 as planned in July</div>
+              <div class="slide-kpi-row" style="margin-top:auto;padding-top:clamp(6px,0.8vw,12px)">
+                <div class="slide-kpi-box"><div class="slide-kpi-box-n" style="color:#1B2A4A">3/4</div><div class="slide-kpi-box-l">Workstreams Phase 1 complete</div></div>
+                <div class="slide-kpi-box"><div class="slide-kpi-box-n" style="color:#C8922A">~80%</div><div class="slide-kpi-box-l">Awareness score vs 70% target</div></div>
+                <div class="slide-kpi-box"><div class="slide-kpi-box-n" style="color:#1B2A4A">0</div><div class="slide-kpi-box-l">Leadership escalations this quarter</div></div>
+              </div>
             </div>
             <div class="slide-right">
               <div class="slide-chart">
-                <div class="chart-title">Programme KPIs at 6 months</div>
+                <div class="chart-title">Employee engagement metrics: before vs after programme</div>
                 <div class="chart-bars">
                   <div class="chart-row">
                     <div class="chart-label">Awareness score</div>
@@ -648,35 +658,43 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
                     <div class="chart-val">80%</div>
                   </div>
                   <div class="chart-row">
-                    <div class="chart-label">Target (set at launch)</div>
+                    <div class="chart-label">Target at launch</div>
                     <div class="chart-bar-wrap"><div class="chart-bar" style="width:70%;background:#A8C4E0"></div></div>
                     <div class="chart-val">70%</div>
                   </div>
+                  <div class="chart-divider"></div>
                   <div class="chart-row">
-                    <div class="chart-label">Survey response rate</div>
+                    <div class="chart-label">Survey response now</div>
                     <div class="chart-bar-wrap"><div class="chart-bar" style="width:68%;background:#1B2A4A"></div></div>
                     <div class="chart-val">68%</div>
                   </div>
                   <div class="chart-row">
-                    <div class="chart-label">Response at launch</div>
+                    <div class="chart-label">Survey response at launch</div>
                     <div class="chart-bar-wrap"><div class="chart-bar" style="width:52%;background:#A8C4E0"></div></div>
                     <div class="chart-val">52%</div>
                   </div>
+                  <div class="chart-divider"></div>
                   <div class="chart-row">
-                    <div class="chart-label">Workstreams on track</div>
-                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:75%;background:#C8922A"></div></div>
-                    <div class="chart-val">3 of 4</div>
+                    <div class="chart-label">Town hall attendance</div>
+                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:65%;background:#C8922A"></div></div>
+                    <div class="chart-val">65%</div>
+                  </div>
+                  <div class="chart-row">
+                    <div class="chart-label">Attendance at launch</div>
+                    <div class="chart-bar-wrap"><div class="chart-bar" style="width:48%;background:#E8D5A8"></div></div>
+                    <div class="chart-val">48%</div>
                   </div>
                 </div>
+                <div class="chart-divider"></div>
                 <div class="chart-legend">
-                  <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1B2A4A"></div>Actual</div>
+                  <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1B2A4A"></div>Current</div>
                   <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#A8C4E0"></div>Baseline / Target</div>
-                  <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#C8922A"></div>Progress indicator</div>
+                  <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#C8922A"></div>Attendance (current)</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="slide-footer">
+          <div class="slide-bottom-bar">
             <div class="slide-footer-text">Project Meridian &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Leadership Review June 2024</div>
             <div class="slide-footer-text">Slide 4 of 12</div>
           </div>
@@ -784,13 +802,13 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     <span class="s-num">Sample 06</span>
     <span class="s-tag" style="background:#E8F4FB;color:#005885;border:1px solid #0077B5">Social content</span>
   </div>
-  <h2 class="sample-title">Professional social posts as they appear in a LinkedIn feed</h2>
-  <p class="sample-desc">Three thought leadership posts rendered inside a realistic LinkedIn interface, showing exactly how they appear to a connection scrolling their feed, with correct post formatting and platform chrome.</p>
+  <h2 class="sample-title">Business social content as it appears in a LinkedIn company feed</h2>
+  <p class="sample-desc">Three posts written for a business account, rendered inside a realistic LinkedIn interface. This reflects the actual nature of the work: writing in a company voice for a brand audience, not personal thought leadership. Shown as they would appear to a follower scrolling their feed.</p>
   <div class="process-row">
     <div class="p-step">
       <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
       <div class="p-step-label">The brief</div>
-      <div class="p-step-text">Write posts that build thought leadership in internal communications. Each post says one thing well, is grounded in real experience, and reflects a sharp professional voice with no generic advice.</div>
+      <div class="p-step-text">Write social content for a business account in the internal communications and change management space. Posts must sound human and credible, not corporate, while building the brand's authority on employee communications and leadership messaging.</div>
     </div>
     <div class="p-step">
       <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
@@ -803,7 +821,7 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
       <div class="p-step-text">Short paragraphs optimised for mobile scroll. Hook strong enough to stop the thumb. Each post covers a different aspect: presentation design, change comms, and editorial discipline.</div>
     </div>
   </div>
-  <div class="output-divider"><span class="output-label">Output — as they appear in a LinkedIn feed</span></div>
+  <div class="output-divider"><span class="output-label">Output — as they appear in a LinkedIn company page feed</span></div>
   <div class="li-chrome">
     <div class="li-topbar">
       <div class="li-logo"><div class="li-logo-mark">in</div></div>
@@ -820,39 +838,39 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
       <div class="li-left-panel">
         <div class="li-profile-card">
           <div class="li-cover"></div>
-          <div class="li-pf-av">GY</div>
-          <div class="li-pf-name">Geetika Yadav</div>
-          <div class="li-pf-role">Communications and Content Lead &nbsp;·&nbsp; Delhi NCR</div>
+          <div class="li-pf-av" style="background:#C8922A;font-size:10px">ABC</div>
+          <div class="li-pf-name">ABC Solutions</div>
+          <div class="li-pf-role">Communications Consulting &nbsp;·&nbsp; 4.2K followers</div>
         </div>
       </div>
       <div class="li-feed-main">
         <div class="li-post-card">
           <div class="li-post-header">
-            <div class="li-post-av">GY</div>
-            <div><div class="li-post-name">Geetika Yadav</div><div class="li-post-title">Communications and Content Lead &nbsp;·&nbsp; Delhi NCR</div><div class="li-post-time">2d &nbsp;·&nbsp; 🌐</div></div>
+            <div class="li-post-av" style="background:#C8922A;font-size:10px;font-weight:700">ABC</div>
+            <div><div class="li-post-name">ABC Solutions</div><div class="li-post-title">Communications Consulting &nbsp;·&nbsp; Promoted by page admin</div><div class="li-post-time">2d &nbsp;·&nbsp; 🌐</div></div>
           </div>
           <div class="li-post-divider"></div>
-          <div class="li-post-hook">One habit that improved every presentation I worked on</div>
-          <div class="li-post-body">Before writing a single slide, write one sentence: "After this presentation, the audience will ___."<br><br>Not "understand our Q3 results." A specific, concrete action or decision.<br><br>Most presentations are built around what the presenter knows, not what the audience needs to leave with.<br><br>Try it on your next deck. You will cut at least three slides.<br><br><span style="color:#0A66C2">#ExecutiveComms &nbsp; #Presentations &nbsp; #Storytelling</span></div>
+          <div class="li-post-hook">One habit that improves every executive presentation</div>
+          <div class="li-post-body">Before writing a single slide, write one sentence: "After this presentation, the audience will ___."<br><br>Not "understand our Q3 results." A specific, concrete outcome or decision.<br><br>Most decks are built around what the presenter knows. The best ones are built around what the audience needs to leave with.<br><br>It sounds simple. But it changes everything about how you structure content, what you cut, and where you start.<br><br>We use this as the first exercise in every executive comms workshop we run.<br><br><span style="color:#0A66C2">#ExecutiveCommunications &nbsp; #LeadershipComms &nbsp; #PresentationSkills</span></div>
           <div class="li-post-actions"><span class="li-action">👍 Like</span><span class="li-action">💬 Comment</span><span class="li-action">↗ Repost</span><span class="li-action">✉ Send</span></div>
         </div>
         <div class="li-post-card">
           <div class="li-post-header">
-            <div class="li-post-av">GY</div>
-            <div><div class="li-post-name">Geetika Yadav</div><div class="li-post-title">Communications and Content Lead &nbsp;·&nbsp; Delhi NCR</div><div class="li-post-time">5d &nbsp;·&nbsp; 🌐</div></div>
+            <div class="li-post-av" style="background:#C8922A;font-size:10px;font-weight:700">ABC</div>
+            <div><div class="li-post-name">ABC Solutions</div><div class="li-post-title">Communications Consulting &nbsp;·&nbsp; Promoted by page admin</div><div class="li-post-time">5d &nbsp;·&nbsp; 🌐</div></div>
           </div>
           <div class="li-post-divider"></div>
-          <div class="li-post-hook">In communications, discipline is the creative act</div>
-          <div class="li-post-body">50+ communications. 5 channels. An awareness score of approximately 80% throughout a 12-month COVID programme.<br><br>The biggest difference-maker was not the content. It was the calendar.<br><br>Moving from 2-day to 10-day lead times gave us space for alignment, better editing, and consistent channel decisions, instead of publishing under pressure.<br><br><span style="color:#0A66C2">#ChangeManagement &nbsp; #InternalComms &nbsp; #CrisisComms</span></div>
+          <div class="li-post-hook">The most overlooked lever in change communications: the calendar</div>
+          <div class="li-post-body">50+ communications. 5 channels. An awareness score of approximately 80% sustained across a 12-month enterprise programme.<br><br>The biggest difference was not the content. It was the lead time.<br><br>Moving from 2-day to 10-day campaign lead times created space for stakeholder alignment, better editing, and consistent channel decisions — rather than publishing under pressure.<br><br>When communications feel reactive, it is usually a planning problem, not a content problem.<br><br>Fix the calendar first.<br><br><span style="color:#0A66C2">#ChangeManagement &nbsp; #InternalCommunications &nbsp; #EmployeeEngagement</span></div>
           <div class="li-post-actions"><span class="li-action">👍 Like</span><span class="li-action">💬 Comment</span><span class="li-action">↗ Repost</span><span class="li-action">✉ Send</span></div>
         </div>
       </div>
       <div class="li-right-panel">
         <div class="li-widget">
-          <div class="li-widget-title">Add to your feed</div>
-          <div class="li-widget-item">Communications professionals</div>
-          <div class="li-widget-item">Internal Comms Network</div>
-          <div class="li-widget-item">Change Management Hub</div>
+          <div class="li-widget-title">More from ABC Solutions</div>
+          <div class="li-widget-item">Employee communications guide</div>
+          <div class="li-widget-item">Change comms playbook</div>
+          <div class="li-widget-item">Executive messaging templates</div>
         </div>
       </div>
     </div>
