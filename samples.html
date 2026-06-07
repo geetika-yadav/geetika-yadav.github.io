@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Samples — Geetika Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1F2E;--ink-mid:#3D4A5C;--ink-muted:#6B7A8D;--navy:#1B2A4A;--navy-mid:#243355;--sky:#3A6EA8;--sky-light:#EBF3FB;--gold:#C8922A;--gold-bg:#FBF5EA;--white:#FFFFFF;--off:#F7F8FA;--border:#E4E8EE;--green:#1F7A5C;--green-bg:#EAF5F0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a.active{color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px}
+
+/* PAGE HEADER */
+.page-hero{padding:7rem clamp(1.5rem,5vw,4rem) 3rem;max-width:1100px;margin:0 auto}
+.page-eyebrow{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
+.page-eyebrow::before{content:'';display:block;width:24px;height:1.5px;background:var(--gold)}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem}
+.page-sub{font-size:1rem;color:var(--ink-muted);max-width:620px;line-height:1.75}
+
+/* SAMPLE LAYOUT */
+.samples-wrap{max-width:1100px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem) 5rem}
+.sample-block{margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border)}
+.sample-block:last-child{border-bottom:none}
+.sample-meta-row{display:flex;align-items:center;gap:1rem;margin-bottom:0.6rem}
+.s-num{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted)}
+.s-tag{font-size:0.72rem;font-weight:500;padding:3px 12px;border-radius:20px}
+.sample-title{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0.6rem}
+.sample-desc{font-size:0.95rem;color:var(--ink-muted);line-height:1.7;max-width:640px;margin-bottom:2.5rem}
+
+/* PROCESS STEPS */
+.process-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+.p-step{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.4rem;position:relative}
+.p-step-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:500;margin-bottom:0.75rem}
+.p-step-label{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.35rem}
+.p-step-text{font-size:0.85rem;color:var(--ink-mid);line-height:1.65}
+.output-divider{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
+.output-divider::before,.output-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.output-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+
+/* ── OUTLOOK EMAIL CHROME ── */
+.outlook-chrome{background:#F3F2F1;border:1px solid #D2D0CE;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1)}
+.outlook-topbar{background:#2B579A;padding:0;display:flex;align-items:center;height:44px;gap:0}
+.otb-logo{padding:0 16px;display:flex;align-items:center;gap:8px;border-right:1px solid rgba(255,255,255,0.15);height:100%}
+.otb-logo-icon{width:20px;height:20px;background:var(--white);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#2B579A}
+.otb-logo-text{font-size:12px;font-weight:500;color:var(--white);letter-spacing:0.02em}
+.otb-tabs{display:flex;height:100%}
+.otb-tab{padding:0 16px;font-size:11px;color:rgba(255,255,255,0.75);display:flex;align-items:center;cursor:default;border-right:1px solid rgba(255,255,255,0.1)}
+.otb-tab.active{background:rgba(255,255,255,0.15);color:var(--white)}
+.outlook-ribbon{background:#EEF2F8;border-bottom:1px solid #D2D0CE;padding:6px 12px;display:flex;align-items:center;gap:6px}
+.ribbon-btn{background:var(--white);border:1px solid #D2D0CE;border-radius:3px;padding:3px 10px;font-size:11px;color:#323130;cursor:default}
+.ribbon-btn.primary{background:#2B579A;border-color:#2B579A;color:var(--white)}
+.outlook-body{display:grid;grid-template-columns:220px 1fr}
+.outlook-sidebar{background:#F3F2F1;border-right:1px solid #D2D0CE;padding:8px 0}
+.ol-folder{padding:5px 16px;font-size:12px;color:#323130;display:flex;align-items:center;gap:8px;cursor:default}
+.ol-folder.active{background:#EEF2F8;font-weight:500}
+.ol-folder-icon{font-size:14px;width:16px;text-align:center;opacity:0.7}
+.ol-badge{margin-left:auto;background:#2B579A;color:var(--white);font-size:10px;font-weight:500;padding:1px 6px;border-radius:10px}
+.outlook-email-list{background:var(--white);border-right:1px solid #D2D0CE;width:220px}
+.email-list-header{padding:8px 12px;border-bottom:1px solid #F3F2F1;font-size:11px;font-weight:500;color:#605E5C}
+.email-list-item{padding:10px 12px;border-bottom:1px solid #F3F2F1;cursor:default}
+.email-list-item.selected{background:#EEF2F8}
+.eli-sender{font-size:12px;font-weight:500;color:#323130;margin-bottom:1px}
+.eli-subject{font-size:11px;color:#605E5C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eli-preview{font-size:11px;color:#A19F9D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eli-time{font-size:10px;color:#A19F9D;float:right;margin-top:-14px}
+.outlook-reading-pane{background:var(--white);flex:1;overflow:hidden}
+.orp-header{padding:16px 20px 12px;border-bottom:1px solid #F3F2F1}
+.orp-subject{font-size:16px;font-weight:600;color:#323130;margin-bottom:8px;line-height:1.3}
+.orp-meta{display:flex;align-items:flex-start;gap:10px}
+.orp-avatar{width:32px;height:32px;border-radius:50%;background:#2B579A;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--white);flex-shrink:0}
+.orp-from{font-size:12px;color:#323130;font-weight:500}
+.orp-to{font-size:11px;color:#605E5C}
+.orp-time{font-size:11px;color:#A19F9D;margin-left:auto;white-space:nowrap}
+.orp-body{padding:16px 20px;max-height:400px;overflow-y:auto}
+
+/* email body rendered */
+.eb-brand-bar{background:#1B2A4A;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-radius:4px 4px 0 0}
+.eb-brand{font-size:11px;font-weight:500;letter-spacing:0.1em;color:var(--white)}
+.eb-sub-tag{font-size:10px;color:#A8C4E0}
+.eb-gold{height:3px;background:var(--gold);margin-bottom:12px}
+.eb-p{font-size:13px;color:#323130;line-height:1.7;margin-bottom:8px}
+.eb-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.eb-block{padding:10px 12px;border-radius:4px;border-top:3px solid}
+.eb-block-t{font-size:12px;font-weight:500;margin-bottom:4px}
+.eb-block-b{font-size:11px;line-height:1.5}
+.eb-sign{font-size:11px;color:#605E5C;margin-top:10px;padding-top:8px;border-top:1px solid #F3F2F1}
+
+/* ── OUTLOOK NEWSLETTER CHROME ── */
+.nl-outlook{background:#F3F2F1;border:1px solid #D2D0CE;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1)}
+.nl-orp-body{padding:16px 20px;background:var(--white)}
+/* newsletter email body */
+.nl-email-wrap{background:var(--white);border:1px solid #E0E0E0;border-radius:4px;overflow:hidden;max-width:580px;margin:0 auto}
+.nl-hdr{background:#1B2A4A;padding:14px 20px;display:flex;justify-content:space-between;align-items:flex-end}
+.nl-brand{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--white)}
+.nl-issue{font-size:11px;color:#A8C4E0;text-align:right;line-height:1.5}
+.nl-gold-bar{height:3px;background:linear-gradient(90deg,var(--gold),#E8B84B)}
+.nl-hero-zone{background:var(--off);padding:16px 20px;border-bottom:1px solid var(--border)}
+.nl-hero-tag{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.nl-hero-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:6px}
+.nl-hero-body{font-size:12px;color:var(--ink-muted);line-height:1.65}
+.nl-body{padding:16px 20px}
+.nl-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nl-story{padding-bottom:10px}
+.nl-story-tag{font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:5px}
+.nl-story-title{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:4px;line-height:1.35}
+.nl-story-body{font-size:11px;color:var(--ink-muted);line-height:1.6}
+.nl-divider{height:1px;background:var(--border);margin:10px 0}
+.nl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.nl-stat-box{background:var(--off);border-radius:5px;padding:8px 10px;text-align:center}
+.nl-stat-n{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy)}
+.nl-stat-l{font-size:10px;color:var(--ink-muted);line-height:1.4}
+.nl-footer-bar{background:#1B2A4A;padding:10px 20px;display:flex;justify-content:space-between;align-items:center}
+.nl-ft{font-size:10px;color:#A8C4E0}
+
+/* ── POWERPOINT CHROME ── */
+.ppt-chrome{background:#2B2B2B;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.2)}
+.ppt-titlebar{background:#B7472A;padding:0 12px;height:36px;display:flex;align-items:center;justify-content:space-between}
+.ppt-titlebar-left{display:flex;align-items:center;gap:8px}
+.ppt-app-icon{width:16px;height:16px;background:var(--white);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#B7472A}
+.ppt-filename{font-size:11px;color:var(--white);opacity:0.9}
+.ppt-winctrls{display:flex;gap:6px}
+.ppt-ctrl{width:12px;height:12px;border-radius:50%}
+.ppt-ribbon{background:#F3F3F3;border-bottom:1px solid #D6D6D6;padding:0}
+.ppt-ribbon-tabs{display:flex;border-bottom:1px solid #D6D6D6}
+.ppt-tab{padding:6px 12px;font-size:11px;color:#484848;cursor:default;border-bottom:2px solid transparent}
+.ppt-tab.active{color:#B7472A;border-bottom-color:#B7472A;font-weight:500}
+.ppt-ribbon-tools{padding:4px 12px;display:flex;gap:4px}
+.ppt-tool{background:var(--white);border:1px solid #D6D6D6;border-radius:2px;padding:2px 8px;font-size:10px;color:#484848;cursor:default}
+.ppt-workspace{background:#4A4A4A;padding:16px;display:flex;gap:12px}
+.ppt-slides-panel{width:72px;display:flex;flex-direction:column;gap:4px}
+.ppt-thumb{background:#2B2B2B;border-radius:2px;padding:2px;cursor:default}
+.ppt-thumb.active{outline:2px solid #B7472A}
+.ppt-thumb-inner{background:#1B2A4A;border-radius:1px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.ppt-thumb-num{font-size:8px;color:rgba(255,255,255,0.4)}
+.ppt-slide-area{flex:1}
+/* The actual slide */
+.ppt-slide{background:#1B2A4A;border-radius:4px;overflow:hidden;aspect-ratio:16/9;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.slide-top-accent{height:4px;background:linear-gradient(90deg,var(--gold),#E8B84B 40%,transparent)}
+.slide-content{flex:1;padding:clamp(12px,2.5vw,28px) clamp(14px,3vw,36px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px);align-items:center}
+.slide-left{}
+.slide-eyebrow{font-size:clamp(7px,0.8vw,10px);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(5px,0.8vw,10px)}
+.slide-headline{font-family:'Playfair Display',serif;font-size:clamp(11px,1.5vw,20px);font-weight:700;color:var(--white);line-height:1.25;margin-bottom:clamp(6px,1vw,14px)}
+.slide-body{font-size:clamp(7px,0.75vw,11px);color:#A8C4E0;line-height:1.6}
+.slide-right{display:flex;flex-direction:column;gap:clamp(5px,0.7vw,10px)}
+.slide-kpi{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:5px;padding:clamp(5px,0.8vw,12px) clamp(8px,1vw,14px);display:flex;align-items:center;gap:clamp(6px,1vw,12px)}
+.slide-kpi-num{font-family:'Playfair Display',serif;font-size:clamp(14px,1.6vw,22px);font-weight:700;color:var(--gold);flex-shrink:0;line-height:1}
+.slide-kpi-text{font-size:clamp(7px,0.72vw,10px);color:#A8C4E0;line-height:1.4}
+.slide-footer{background:rgba(0,0,0,0.3);padding:clamp(4px,0.5vw,8px) clamp(14px,2vw,24px);display:flex;justify-content:space-between;align-items:center}
+.slide-footer-text{font-size:clamp(6px,0.6vw,9px);color:#6B7A8D}
+.ppt-statusbar{background:#2B2B2B;padding:4px 12px;display:flex;justify-content:space-between;align-items:center}
+.ppt-status-text{font-size:10px;color:#A0A0A0}
+
+/* ── SHAREPOINT BROWSER ── */
+.sp-browser{background:#F3F2F1;border:1px solid #D2D0CE;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1)}
+.browser-chrome{background:#FFFFFF;border-bottom:1px solid #E0E0E0;padding:8px 12px;display:flex;align-items:center;gap:8px}
+.browser-btns{display:flex;gap:4px}
+.browser-btn{width:11px;height:11px;border-radius:50%}
+.browser-url{flex:1;background:#F3F2F1;border:1px solid #D2D0CE;border-radius:20px;padding:4px 12px;font-size:11px;color:#323130;font-family:monospace}
+.sp-app-bar{background:#0078D4;padding:0 14px;height:40px;display:flex;align-items:center;gap:16px}
+.sp-app-icon{font-size:12px;font-weight:500;color:var(--white);opacity:0.9}
+.sp-app-icon.active{opacity:1;font-weight:600}
+.sp-site-nav{background:#1B2A4A;padding:0 14px;height:38px;display:flex;align-items:center;gap:20px}
+.sp-site-link{font-size:12px;color:rgba(255,255,255,0.75)}
+.sp-site-link.active{color:var(--white);border-bottom:2px solid var(--gold);padding-bottom:4px}
+.sp-page{background:var(--white);padding:0}
+.sp-hero-zone{background:#1B2A4A;padding:20px 20px 16px;position:relative}
+.sp-hero-label{font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.sp-hero-title{font-size:20px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.2}
+.sp-hero-cta{display:inline-block;background:var(--gold);color:#1B2A4A;font-size:11px;font-weight:600;padding:6px 16px;border-radius:3px}
+.sp-hero-meta{position:absolute;top:12px;right:16px;font-size:10px;color:#A8C4E0}
+.sp-page-body{padding:14px 20px}
+.sp-section-head{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#0078D4;margin:10px 0 6px}
+.sp-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sp-4col{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sp-news-card{background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 10px;border-top:3px solid #0078D4}
+.sp-news-title{font-size:12px;font-weight:500;color:var(--navy);margin-bottom:3px}
+.sp-news-meta{font-size:10px;color:var(--ink-muted)}
+.sp-ws-tile{border-radius:4px;padding:10px;display:flex;flex-direction:column;gap:4px}
+.sp-ws-label{font-size:11px;font-weight:500;color:var(--white)}
+.sp-ws-meta{font-size:10px;color:rgba(255,255,255,0.65)}
+.sp-tl{background:var(--off);border:1px solid var(--border);border-radius:4px;padding:10px 12px}
+.sp-tl-inner{display:flex;align-items:center}
+.sp-tl-ph{display:flex;flex-direction:column;align-items:center;flex:1}
+.sp-tl-dot{width:13px;height:13px;border-radius:50%;margin-bottom:3px}
+.sp-tl-label{font-size:9px;color:#555;text-align:center}
+.sp-tl-line{height:2px;flex:1;margin-top:-14px}
+.sp-sp-footer{background:var(--off);padding:6px 20px;border-top:1px solid var(--border);font-size:10px;color:var(--ink-muted)}
+
+/* ── LINKEDIN CHROME ── */
+.li-chrome{background:#F3F2F0;border:1px solid #D2D0CE;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1)}
+.li-topbar{background:#0A66C2;padding:0 14px;height:44px;display:flex;align-items:center;justify-content:space-between}
+.li-logo{display:flex;align-items:center;gap:8px}
+.li-logo-mark{background:var(--white);color:#0A66C2;font-size:13px;font-weight:700;width:24px;height:24px;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.li-search{background:rgba(255,255,255,0.15);border-radius:4px;padding:5px 12px;font-size:12px;color:rgba(255,255,255,0.75);min-width:180px}
+.li-nav-icons{display:flex;gap:16px}
+.li-nav-item{font-size:11px;color:rgba(255,255,255,0.75);display:flex;flex-direction:column;align-items:center;gap:2px;cursor:default}
+.li-nav-item.active{color:var(--white)}
+.li-nav-icon{font-size:16px}
+.li-feed{display:grid;grid-template-columns:180px 1fr 180px;gap:10px;padding:10px 14px;max-height:480px;overflow:hidden}
+.li-left-panel{display:flex;flex-direction:column;gap:6px}
+.li-profile-card{background:var(--white);border:1px solid #E0E0E0;border-radius:8px;overflow:hidden;text-align:center}
+.li-cover{height:30px;background:linear-gradient(135deg,#1B2A4A,#3A6EA8)}
+.li-pf-av{width:40px;height:40px;border-radius:50%;background:#1B2A4A;border:2px solid var(--white);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--gold);margin:-20px auto 6px}
+.li-pf-name{font-size:12px;font-weight:500;color:#191919;padding:0 8px}
+.li-pf-role{font-size:10px;color:#666;padding:0 8px 8px}
+.li-feed-main{display:flex;flex-direction:column;gap:8px}
+.li-post-card{background:var(--white);border:1px solid #E0E0E0;border-radius:8px;overflow:hidden}
+.li-post-header{padding:10px 12px 0;display:flex;align-items:flex-start;gap:8px}
+.li-post-av{width:36px;height:36px;border-radius:50%;background:#1B2A4A;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0}
+.li-post-name{font-size:12px;font-weight:500;color:#191919}
+.li-post-title{font-size:11px;color:#666;line-height:1.3}
+.li-post-time{font-size:10px;color:#999}
+.li-post-divider{height:2px;background:var(--gold);margin:8px 12px 0}
+.li-post-hook{background:#1B2A4A;padding:10px 12px;font-size:12px;font-weight:500;color:var(--white);line-height:1.4}
+.li-post-body{padding:10px 12px;font-size:12px;color:#191919;line-height:1.6}
+.li-post-actions{padding:6px 12px;border-top:1px solid #F0F0F0;display:flex;gap:10px}
+.li-action{font-size:11px;color:#666;cursor:default}
+.li-right-panel{display:flex;flex-direction:column;gap:6px}
+.li-widget{background:var(--white);border:1px solid #E0E0E0;border-radius:8px;padding:10px 12px}
+.li-widget-title{font-size:11px;font-weight:500;color:#191919;margin-bottom:6px}
+.li-widget-item{font-size:10px;color:#666;margin-bottom:4px}
+
+/* ── WRITTEN ARTICLE ── */
+.article-page{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 2px 16px rgba(26,31,46,0.07)}
+.article-header{padding:2rem 2.5rem 1.5rem;border-bottom:1px solid var(--border)}
+.article-kicker{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.article-title{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0.75rem}
+.article-byline{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:var(--ink-muted)}
+.article-av{width:32px;height:32px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold)}
+.article-body{padding:2rem 2.5rem}
+.a-lede{font-size:1.05rem;font-style:italic;font-family:'Playfair Display',serif;color:var(--navy);line-height:1.65;border-left:3px solid var(--gold);padding-left:1.25rem;margin-bottom:1.5rem}
+.a-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
+.a-stat{background:var(--navy);border-radius:8px;padding:1rem 1.2rem}
+.a-stat-n{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--gold);line-height:1}
+.a-stat-l{font-size:0.72rem;color:#A8C4E0;margin-top:3px}
+.a-h{font-size:1rem;font-weight:500;color:var(--navy);margin:1.25rem 0 0.4rem}
+.a-p{font-size:0.92rem;color:var(--ink-mid);line-height:1.8;margin-bottom:0.75rem}
+.a-callout{background:var(--off);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1.25rem 0}
+.a-callout-big{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--navy)}
+.a-callout-sub{font-size:0.85rem;color:var(--ink-muted);margin-top:2px}
+.a-tags{font-size:0.8rem;color:var(--sky);margin-top:1.5rem}
+
+/* CONTACT / FOOTER */
+.contact-section{background:var(--navy);padding:3.5rem clamp(1.5rem,5vw,4rem)}
+.contact-inner{max-width:640px;margin:0 auto;text-align:center}
+.contact-kicker{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:10px}
+.contact-kicker::before,.contact-kicker::after{content:'';display:block;width:24px;height:1.5px;background:var(--gold)}
+.contact-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--white);margin-bottom:.65rem;line-height:1.2}
+.contact-sub{color:#A8C4E0;margin-bottom:1.5rem;font-size:.9rem;line-height:1.7}
+.contact-meta{font-size:.88rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;align-items:center}
+.contact-meta span{color:rgba(255,255,255,0.45);font-weight:500}
+.contact-meta a{color:#A8C4E0;text-decoration:none;transition:color .2s}
+.contact-meta a:hover{color:var(--gold)}
+footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:.78rem;color:#3A4A5C}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:.78rem;color:#3A4A5C;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#6B7A8D}
+.also-see{background:var(--off);border-top:1px solid var(--border);padding:2.5rem clamp(1.5rem,5vw,4rem)}
+.also-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.also-text{font-size:0.95rem;color:var(--ink-mid)}
+.also-text strong{color:var(--navy)}
+.also-link{font-size:0.88rem;font-weight:500;color:var(--navy);text-decoration:none;border:1.5px solid var(--border);padding:0.65rem 1.5rem;border-radius:4px;transition:border-color .2s,background .2s;white-space:nowrap}
+.also-link:hover{border-color:var(--navy);background:var(--navy);color:var(--white)}
+@media(max-width:860px){.process-row{grid-template-columns:1fr}.eb-blocks{grid-template-columns:1fr}.nl-2col{grid-template-columns:1fr}.slide-content{grid-template-columns:1fr}.slide-right{display:none}.li-feed{grid-template-columns:1fr}.li-left-panel,.li-right-panel{display:none}.nav-links{display:none}.a-stats{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.a-stats{grid-template-columns:1fr}.nl-stats{grid-template-columns:repeat(3,1fr)}.sp-4col{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Geetika Yadav</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="samples.html" class="active">Work Samples</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Work Samples</div>
+  <h1 class="page-title">How I approach the work</h1>
+  <p class="page-sub">Each sample shows the brief, the thinking behind the approach, and the output rendered in its actual delivery format: emails as they appear in an Outlook inbox, newsletters as they land in a mail client, slides as they look in PowerPoint, and social content as it appears on the platform.</p>
+</div>
+
+<div class="samples-wrap">
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 01 — WRITTEN ARTICLE
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s1">
+  <div class="sample-meta-row">
+    <span class="s-num">Sample 01</span>
+    <span class="s-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Written article</span>
+  </div>
+  <h2 class="sample-title">Communicating through a crisis: a written article</h2>
+  <p class="sample-desc">A long-form piece drawing on the COVID-19 programme experience, demonstrating how I structure written thought leadership for a professional audience.</p>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">Write a professional article grounded in real experience rather than theory. Audience: peers, hiring managers, and potential collaborators who understand communications.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Three concrete lessons, each backed by a specific operational decision from the programme. Reader gets insight, not assertion. Opening hook drops the reader into the moment before any context is given.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">Long-form with numbered insights for scannability. Closes with a philosophy rather than a summary. Designed to be read in full, not skimmed.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output</span></div>
+  <div class="article-page">
+    <div class="article-header">
+      <div class="article-kicker">Written article &nbsp;·&nbsp; Internal communications</div>
+      <div class="article-title">When silence was not an option: lessons from communicating through a crisis</div>
+      <div class="article-byline">
+        <div class="article-av">GY</div>
+        <div><div style="font-weight:500;color:var(--navy)">Geetika Yadav</div><div>Communications and Content Lead &nbsp;·&nbsp; 5 min read</div></div>
+      </div>
+    </div>
+    <div class="article-body">
+      <p class="a-lede">"In early 2020, my team had 72 hours to build a communications plan for 2,000+ employees. No playbook. No precedent. Just a blank slide deck and a lot of questions from people we had not yet figured out how to reach."</p>
+      <div class="a-stats">
+        <div class="a-stat"><div class="a-stat-n">50+</div><div class="a-stat-l">Targeted communications delivered</div></div>
+        <div class="a-stat"><div class="a-stat-n">~80%</div><div class="a-stat-l">Employee awareness score sustained</div></div>
+        <div class="a-stat"><div class="a-stat-n">68%</div><div class="a-stat-l">Average pulse survey response rate</div></div>
+      </div>
+      <div class="a-h">1. Clarity beats comprehensiveness</div>
+      <p class="a-p">Our first instinct was to include everything in every message. It did not work. The shift happened when we stopped trying to be comprehensive and started writing for one question at a time: "What does this mean for me, right now?" From that point on, each communication had a single primary action or insight. Everything else lived on the intranet or waited for the next message in the series.</p>
+      <div class="a-callout">
+        <div class="a-callout-big">10 days</div>
+        <div class="a-callout-sub">Average campaign lead time, extended from 2. That single operational shift created space for proper stakeholder alignment before every send.</div>
+      </div>
+      <div class="a-h">2. Cadence is its own form of reassurance</div>
+      <p class="a-p">Employees were not anxious about the news. They were anxious about the silence between the news. A predictable rhythm of weekly updates and fortnightly leadership messages reduced informal speculation and helped people feel the organisation was still functioning with intention. Extending lead time from 2 to 10 days made a meaningful difference in message quality and stakeholder confidence.</p>
+      <div class="a-h">3. The communicator's job is to reduce cognitive load, not add to it</div>
+      <p class="a-p">During a crisis, every person on your audience list is already processing uncertainty. Your job is not to demonstrate how much you know. It is to reduce the work they have to do to understand what is happening and what they need to do next. Short paragraphs. Consistent formats. Named contacts. Specific timelines. These are not stylistic choices. They are acts of organisational care.</p>
+      <div class="a-tags">#InternalCommunications &nbsp; #ChangeManagement &nbsp; #EmployeeEngagement &nbsp; #CrisisComms</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 02 — NEWSLETTER IN OUTLOOK
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s2">
+  <div class="sample-meta-row">
+    <span class="s-num">Sample 02</span>
+    <span class="s-tag" style="background:var(--sky-light);color:#1A4A7A;border:1px solid #5B8DB8">Newsletter design</span>
+  </div>
+  <h2 class="sample-title">Internal newsletter as it lands in an Outlook inbox</h2>
+  <p class="sample-desc">A designed recurring newsletter rendered exactly as it would appear when an employee opens it in Microsoft Outlook, showing editorial structure, branded layout, and content hierarchy.</p>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">Design a recurring internal newsletter for 2,000+ employees. Needs to carry multiple content types, feel consistent across issues, and not require a designer to produce each time.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Four fixed zones: hero story, two-column news, data snapshot, and footer. Fixed zones mean the template can be populated by any team member without layout decisions each time. Editorial tone is direct and human.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">Issue numbering so employees build a habit of looking for it. Colour-coded content tags for navigation. Stats row carries key pulse data in every issue, making numbers part of the rhythm rather than a special feature.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output — as it appears in Microsoft Outlook</span></div>
+  <div class="nl-outlook">
+    <div class="outlook-topbar">
+      <div class="otb-logo"><div class="otb-logo-icon">O</div><div class="otb-logo-text">Outlook</div></div>
+      <div class="otb-tabs">
+        <div class="otb-tab active">Mail</div>
+        <div class="otb-tab">Calendar</div>
+        <div class="otb-tab">People</div>
+      </div>
+    </div>
+    <div class="outlook-ribbon">
+      <div class="ribbon-btn primary">New mail</div>
+      <div class="ribbon-btn">Reply</div>
+      <div class="ribbon-btn">Forward</div>
+      <div class="ribbon-btn">Delete</div>
+    </div>
+    <div style="display:grid;grid-template-columns:160px 200px 1fr">
+      <div class="outlook-sidebar">
+        <div class="ol-folder active"><span class="ol-folder-icon">📥</span>Inbox <span class="ol-badge">3</span></div>
+        <div class="ol-folder"><span class="ol-folder-icon">⭐</span>Starred</div>
+        <div class="ol-folder"><span class="ol-folder-icon">📤</span>Sent</div>
+        <div class="ol-folder"><span class="ol-folder-icon">📁</span>Drafts</div>
+      </div>
+      <div class="outlook-email-list">
+        <div class="email-list-header">Inbox</div>
+        <div class="email-list-item selected">
+          <div class="eli-sender">Meridian Comms</div>
+          <div class="eli-subject">Meridian Insider — Issue 06</div>
+          <div class="eli-preview">Phase 2 is live. Here is...</div>
+          <div class="eli-time">9:02 AM</div>
+        </div>
+        <div class="email-list-item">
+          <div class="eli-sender">HR Team</div>
+          <div class="eli-subject">Town Hall — Register now</div>
+          <div class="eli-preview">Join us on 20 June...</div>
+          <div class="eli-time">Yesterday</div>
+        </div>
+        <div class="email-list-item">
+          <div class="eli-sender">IT Support</div>
+          <div class="eli-subject">System update this weekend</div>
+          <div class="eli-preview">Planned maintenance...</div>
+          <div class="eli-time">Mon</div>
+        </div>
+      </div>
+      <div class="outlook-reading-pane">
+        <div class="orp-header">
+          <div class="orp-subject">Meridian Insider — Issue 06: Phase 2 is live</div>
+          <div class="orp-meta">
+            <div class="orp-avatar">MC</div>
+            <div><div class="orp-from">Meridian Communications</div><div class="orp-to">To: All Employees</div></div>
+            <div class="orp-time">Today, 9:02 AM</div>
+          </div>
+        </div>
+        <div class="orp-body">
+          <div class="nl-email-wrap">
+            <div class="nl-hdr"><div class="nl-brand">Meridian Insider</div><div class="nl-issue">Issue 06 &nbsp;·&nbsp; June 2024<br>Project Meridian &nbsp;·&nbsp; Internal</div></div>
+            <div class="nl-gold-bar"></div>
+            <div class="nl-hero-zone">
+              <div class="nl-hero-tag">This month</div>
+              <div class="nl-hero-title">Phase 2 is live. Here is what changes for your team.</div>
+              <div class="nl-hero-body">After six months of groundwork, Phase 2 of Project Meridian began on 1 June. This issue covers what it means in practice, who to speak to, and what the data is telling us so far.</div>
+            </div>
+            <div class="nl-body">
+              <div class="nl-2col">
+                <div>
+                  <div class="nl-story"><span class="nl-story-tag" style="background:var(--sky-light);color:var(--sky)">Process</span><div class="nl-story-title">New approval workflows go live in Finance and Ops this month</div><div class="nl-story-body">Redesigned sign-off reduces average turnaround from 4 days to 1. Training sessions run every Tuesday through June.</div></div>
+                  <div class="nl-divider"></div>
+                  <div class="nl-story"><span class="nl-story-tag" style="background:var(--green-bg);color:var(--green)">People</span><div class="nl-story-title">Meet your Phase 2 workstream lead</div><div class="nl-story-body">Each workstream now has a named lead as your single point of contact for questions and escalations.</div></div>
+                </div>
+                <div>
+                  <div class="nl-story"><span class="nl-story-tag" style="background:var(--gold-bg);color:#7A5200">Leadership</span><div class="nl-story-title">COO message: what Phase 2 asks of each of us</div><div class="nl-story-body">"Phase 1 proved we can do this. Phase 2 asks us to go further. I am proud of the discipline this organisation has shown."</div></div>
+                  <div class="nl-divider"></div>
+                  <div class="nl-story"><span class="nl-story-tag" style="background:#F5F0FA;color:#6B3FA0">Event</span><div class="nl-story-title">Town hall: 20 June, 3 PM. Register now.</div><div class="nl-story-body">Live Q&A with programme leadership. Submit questions in advance via the Meridian intranet page.</div></div>
+                </div>
+              </div>
+              <div class="nl-divider"></div>
+              <div style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:6px">Programme pulse</div>
+              <div class="nl-stats">
+                <div class="nl-stat-box"><div class="nl-stat-n">76%</div><div class="nl-stat-l">Feel informed about Phase 2</div></div>
+                <div class="nl-stat-box"><div class="nl-stat-n">3/4</div><div class="nl-stat-l">Workstreams on track</div></div>
+                <div class="nl-stat-box"><div class="nl-stat-n">65%</div><div class="nl-stat-l">Town hall registrations</div></div>
+              </div>
+            </div>
+            <div class="nl-footer-bar"><div class="nl-ft">Meridian Insider &nbsp;·&nbsp; Internal &nbsp;·&nbsp; Not for external distribution</div><div class="nl-ft">meridian@company.com</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 03 — EXECUTIVE EMAIL IN OUTLOOK
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s3">
+  <div class="sample-meta-row">
+    <span class="s-num">Sample 03</span>
+    <span class="s-tag" style="background:#EEF1F6;color:#2E4070;border:1px solid #3D5170">Executive communication</span>
+  </div>
+  <h2 class="sample-title">Executive programme launch announcement as it appears in Outlook</h2>
+  <p class="sample-desc">A leadership communication from the COO announcing a major transformation programme, rendered as it would appear in an employee's Outlook inbox with full branded email template.</p>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">The COO needs to announce a major programme to all employees. The message must be reassuring without being vague, credible without being dense, and easy to act on without being patronising.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Three content blocks answer the questions employees ask first: what is this, why now, and what this is not. The third block addresses the fear before the employee has to voice it.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">Branded template with a clear sender identity, subject line designed to be opened, and a single next-step action. No attachments on first send. All detail lives on the intranet page.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output — as it appears in Microsoft Outlook</span></div>
+  <div class="outlook-chrome">
+    <div class="outlook-topbar">
+      <div class="otb-logo"><div class="otb-logo-icon">O</div><div class="otb-logo-text">Outlook</div></div>
+      <div class="otb-tabs"><div class="otb-tab active">Mail</div><div class="otb-tab">Calendar</div><div class="otb-tab">People</div></div>
+    </div>
+    <div class="outlook-ribbon">
+      <div class="ribbon-btn primary">New mail</div>
+      <div class="ribbon-btn">Reply</div>
+      <div class="ribbon-btn">Forward</div>
+      <div class="ribbon-btn">Delete</div>
+    </div>
+    <div style="display:grid;grid-template-columns:160px 200px 1fr">
+      <div class="outlook-sidebar">
+        <div class="ol-folder active"><span class="ol-folder-icon">📥</span>Inbox <span class="ol-badge">1</span></div>
+        <div class="ol-folder"><span class="ol-folder-icon">⭐</span>Starred</div>
+        <div class="ol-folder"><span class="ol-folder-icon">📤</span>Sent</div>
+        <div class="ol-folder"><span class="ol-folder-icon">📁</span>Drafts</div>
+      </div>
+      <div class="outlook-email-list">
+        <div class="email-list-header">Inbox</div>
+        <div class="email-list-item selected">
+          <div class="eli-sender" style="font-weight:600">COO — All staff</div>
+          <div class="eli-subject" style="font-weight:500">Introducing Project Meridian</div>
+          <div class="eli-preview">Today we are launching...</div>
+          <div class="eli-time">8:00 AM</div>
+        </div>
+        <div class="email-list-item">
+          <div class="eli-sender">Meridian Comms</div>
+          <div class="eli-subject">Meridian Insider — Issue 06</div>
+          <div class="eli-preview">Phase 2 is live...</div>
+          <div class="eli-time">9:02 AM</div>
+        </div>
+      </div>
+      <div class="outlook-reading-pane">
+        <div class="orp-header">
+          <div class="orp-subject">Introducing Project Meridian: what it means for our teams</div>
+          <div class="orp-meta">
+            <div class="orp-avatar">COO</div>
+            <div><div class="orp-from">Chief Operating Officer</div><div class="orp-to">To: All Employees</div></div>
+            <div class="orp-time">Today, 8:00 AM</div>
+          </div>
+        </div>
+        <div class="orp-body">
+          <div class="eb-brand-bar"><span class="eb-brand">MERIDIAN COMMUNICATIONS</span><span class="eb-sub-tag">Internal Broadcast</span></div>
+          <div class="eb-gold"></div>
+          <p class="eb-p">Team,</p>
+          <p class="eb-p">Today we are launching Project Meridian, our organisation-wide operating model transformation programme. I want to explain what this means, why it matters, and what you can expect in the months ahead.</p>
+          <div class="eb-blocks">
+            <div class="eb-block" style="background:#F4F7FA;border-color:#3A6EA8"><div class="eb-block-t" style="color:#1B2A4A">What is Meridian?</div><div class="eb-block-b" style="color:#444">An 18-month programme covering Process Redesign, Technology Enablement, Talent and Organisation, and Governance.</div></div>
+            <div class="eb-block" style="background:#F4F7FA;border-color:#3A6EA8"><div class="eb-block-t" style="color:#1B2A4A">Why now?</div><div class="eb-block-b" style="color:#444">The structures that served us at one scale are limiting us at another. This is a conscious investment in the next phase.</div></div>
+            <div class="eb-block" style="background:#1B2A4A;border-color:#C8922A"><div class="eb-block-t" style="color:#C8922A">What this is NOT</div><div class="eb-block-b" style="color:#A8C4E0">A restructuring exercise. Meridian is about capability, building the foundation for sustainable growth.</div></div>
+          </div>
+          <p class="eb-p">Your line manager will brief your team in the next four weeks. The first Q&A session is on [Date]. A dedicated intranet page goes live on [Date] with the full timeline and contact directory.</p>
+          <div class="eb-sign">[Chief Operating Officer] &nbsp;·&nbsp; Chief Operating Officer &nbsp;·&nbsp; Project Meridian Sponsor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 04 — POWERPOINT SLIDE
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s4">
+  <div class="sample-meta-row">
+    <span class="s-num">Sample 04</span>
+    <span class="s-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Presentation design</span>
+  </div>
+  <h2 class="sample-title">Executive presentation slide as it appears in PowerPoint</h2>
+  <p class="sample-desc">A mid-programme progress slide from a leadership deck, shown inside the PowerPoint application interface to demonstrate how it would actually be presented to senior leadership.</p>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">One slide for a leadership deck communicating programme progress at the 6-month mark. Senior audience. Must convey confidence without oversimplifying, and carry a clear narrative, not just data.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Left panel carries the narrative: situation, achievement, and what it means. Right panel carries the evidence: four KPIs that back the narrative. Both panels work independently so the presenter can reference either without the other.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">Dark background signals leadership-tier deck. Large numerals on KPI cards so key numbers read from the back of a room. Footer carries slide context so it stands alone if shared in a follow-up email.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output — as it appears in Microsoft PowerPoint</span></div>
+  <div class="ppt-chrome">
+    <div class="ppt-titlebar">
+      <div class="ppt-titlebar-left">
+        <div class="ppt-winctrls"><div class="ppt-ctrl" style="background:#FF5F57"></div><div class="ppt-ctrl" style="background:#FFBD2E"></div><div class="ppt-ctrl" style="background:#28C840"></div></div>
+        <div class="ppt-app-icon">P</div>
+        <div class="ppt-filename">Meridian_Leadership_Review_June2024.pptx — PowerPoint</div>
+      </div>
+    </div>
+    <div class="ppt-ribbon">
+      <div class="ppt-ribbon-tabs">
+        <div class="ppt-tab active">Home</div>
+        <div class="ppt-tab">Insert</div>
+        <div class="ppt-tab">Design</div>
+        <div class="ppt-tab">Transitions</div>
+        <div class="ppt-tab">Animations</div>
+        <div class="ppt-tab">Slide Show</div>
+      </div>
+      <div class="ppt-ribbon-tools">
+        <div class="ppt-tool">New Slide</div>
+        <div class="ppt-tool">Layout</div>
+        <div class="ppt-tool">Text Box</div>
+        <div class="ppt-tool">Shapes</div>
+      </div>
+    </div>
+    <div class="ppt-workspace">
+      <div class="ppt-slides-panel">
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">1</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">2</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">3</span></div></div>
+        <div class="ppt-thumb active"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">4</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">5</span></div></div>
+      </div>
+      <div class="ppt-slide-area">
+        <div class="ppt-slide">
+          <div class="slide-top-accent"></div>
+          <div class="slide-content">
+            <div class="slide-left">
+              <div class="slide-eyebrow">Project Meridian &nbsp;·&nbsp; 6-month progress review</div>
+              <div class="slide-headline">We are on track, and the data supports moving forward with confidence</div>
+              <div class="slide-body">Three of four workstreams have completed Phase 1 on schedule. Employee awareness sits at approximately 80%, above the 70% target set at programme launch. The communications cadence established in Q1 has held without escalation since February.<br><br>Recommendation: proceed to Phase 2 as planned in July.</div>
+            </div>
+            <div class="slide-right">
+              <div class="slide-kpi"><div class="slide-kpi-num">3/4</div><div class="slide-kpi-text">Workstreams: Phase 1 complete and on schedule</div></div>
+              <div class="slide-kpi"><div class="slide-kpi-num">~80%</div><div class="slide-kpi-text">Employee awareness score vs 70% target</div></div>
+              <div class="slide-kpi"><div class="slide-kpi-num">68%</div><div class="slide-kpi-text">Pulse survey response rate, up from 52% at launch</div></div>
+              <div class="slide-kpi"><div class="slide-kpi-num">0</div><div class="slide-kpi-text">Leadership escalations since cadence established</div></div>
+            </div>
+          </div>
+          <div class="slide-footer">
+            <div class="slide-footer-text">Project Meridian &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Leadership Review June 2024</div>
+            <div class="slide-footer-text">Slide 4 of 12</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ppt-statusbar">
+      <div class="ppt-status-text">Slide 4 of 12 &nbsp;·&nbsp; Normal View</div>
+      <div class="ppt-status-text">100%</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 05 — SHAREPOINT IN BROWSER
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s5">
+  <div class="sample-meta-row">
+    <span class="s-num">Sample 05</span>
+    <span class="s-tag" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">SharePoint design</span>
+  </div>
+  <h2 class="sample-title">SharePoint homepage as it appears in a browser</h2>
+  <p class="sample-desc">A programme intranet homepage rendered inside a realistic browser chrome with the full SharePoint interface, showing zone architecture, navigation, and content governance in context.</p>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">Design a SharePoint homepage for a major programme serving 2,000+ employees. Must work without a developer after initial build, support a weekly publishing cadence, and be governable by a comms team of two.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Mapped six distinct audience needs to six homepage zones. Architecture is audience-driven rather than content-driven. Each zone has a named owner. Nothing publishes without ownership accountability.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">Hero zone carries the current phase and a single CTA. News zone surfaces only the three most recent items, auto-sorted. Timeline tracker gives employees a live progress view without requiring them to read a document.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output — as it appears in a browser</span></div>
+  <div class="sp-browser">
+    <div class="browser-chrome">
+      <div class="browser-btns"><div class="browser-btn" style="background:#FF5F57"></div><div class="browser-btn" style="background:#FFBD2E"></div><div class="browser-btn" style="background:#28C840"></div></div>
+      <div class="browser-url">company.sharepoint.com/sites/meridian</div>
+    </div>
+    <div class="sp-app-bar">
+      <span class="sp-app-icon">SharePoint</span>
+      <span class="sp-app-icon">Sites</span>
+      <span class="sp-app-icon active">Meridian</span>
+    </div>
+    <div class="sp-site-nav">
+      <span class="sp-site-link active">Home</span>
+      <span class="sp-site-link">Workstreams</span>
+      <span class="sp-site-link">Resources</span>
+      <span class="sp-site-link">Timeline</span>
+      <span class="sp-site-link">Contacts</span>
+    </div>
+    <div class="sp-page">
+      <div class="sp-hero-zone">
+        <div class="sp-hero-label">Zone 1 — Hero banner &nbsp;·&nbsp; Phase 2 Active</div>
+        <div class="sp-hero-title">Project Meridian: Transforming How We Work</div>
+        <span class="sp-hero-cta">Read latest update</span>
+        <div class="sp-hero-meta">Updated weekly &nbsp;·&nbsp; Owner: Comms Lead</div>
+      </div>
+      <div class="sp-page-body">
+        <div class="sp-section-head">Zone 2 — What's new</div>
+        <div class="sp-3col" style="margin-bottom:10px">
+          <div class="sp-news-card"><div class="sp-news-title">Phase 2 kick-off confirmed</div><div class="sp-news-meta">2 days ago &nbsp;·&nbsp; Announcement</div></div>
+          <div class="sp-news-card"><div class="sp-news-title">Q&A recording now available</div><div class="sp-news-meta">1 week ago &nbsp;·&nbsp; Recording</div></div>
+          <div class="sp-news-card"><div class="sp-news-title">Town hall: 20 June, 3 PM</div><div class="sp-news-meta">Upcoming event &nbsp;·&nbsp; Register</div></div>
+        </div>
+        <div class="sp-section-head">Zone 3 — Programme workstreams</div>
+        <div class="sp-4col" style="margin-bottom:10px">
+          <div class="sp-ws-tile" style="background:#1B2A4A"><div class="sp-ws-label">Process Redesign</div><div class="sp-ws-meta">Phase 2 active</div></div>
+          <div class="sp-ws-tile" style="background:#1A6B8A"><div class="sp-ws-label">Technology Enablement</div><div class="sp-ws-meta">Phase 1 complete</div></div>
+          <div class="sp-ws-tile" style="background:#2A5C45"><div class="sp-ws-label">Talent and Organisation</div><div class="sp-ws-meta">Phase 2 active</div></div>
+          <div class="sp-ws-tile" style="background:#6A3B5C"><div class="sp-ws-label">Governance</div><div class="sp-ws-meta">Phase 1 complete</div></div>
+        </div>
+        <div class="sp-section-head">Zone 4 — Timeline tracker</div>
+        <div class="sp-tl" style="margin-bottom:4px">
+          <div class="sp-tl-inner">
+            <div class="sp-tl-ph"><div class="sp-tl-dot" style="background:#3A6EA8"></div><div class="sp-tl-label">Discovery</div></div>
+            <div class="sp-tl-line" style="background:#3A6EA8"></div>
+            <div class="sp-tl-ph"><div class="sp-tl-dot" style="background:#3A6EA8"></div><div class="sp-tl-label">Design</div></div>
+            <div class="sp-tl-line" style="background:#3A6EA8"></div>
+            <div class="sp-tl-ph"><div class="sp-tl-dot" style="background:#3A6EA8"></div><div class="sp-tl-label">Phase 1</div></div>
+            <div class="sp-tl-line" style="background:#C8922A"></div>
+            <div class="sp-tl-ph"><div class="sp-tl-dot" style="background:#C8922A"></div><div class="sp-tl-label">Phase 2 ←</div></div>
+            <div class="sp-tl-line" style="background:#CCC"></div>
+            <div class="sp-tl-ph"><div class="sp-tl-dot" style="background:#CCC"></div><div class="sp-tl-label">Phase 3</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-sp-footer">Zone ownership: Comms Lead = Hero and News &nbsp;·&nbsp; PM = Timeline &nbsp;·&nbsp; Workstream Leads = Tiles and Resources &nbsp;·&nbsp; No page live without named owner</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 06 — LINKEDIN POSTS IN FEED
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s6">
+  <div class="sample-meta-row">
+    <span class="s-num">Sample 06</span>
+    <span class="s-tag" style="background:#E8F4FB;color:#005885;border:1px solid #0077B5">Social content</span>
+  </div>
+  <h2 class="sample-title">Professional social posts as they appear in a LinkedIn feed</h2>
+  <p class="sample-desc">Three thought leadership posts rendered inside a realistic LinkedIn interface, showing exactly how they appear to a connection scrolling their feed, with correct post formatting and platform chrome.</p>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">Write posts that build thought leadership in internal communications. Each post says one thing well, is grounded in real experience, and reflects a sharp professional voice with no generic advice.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Each post opens with a hook that is concrete and specific rather than a question or vague claim. Body develops one insight with a real data point where possible. Close lands a reframe rather than a summary.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">Short paragraphs optimised for mobile scroll. Hook strong enough to stop the thumb. Each post covers a different aspect: presentation design, change comms, and editorial discipline.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output — as they appear in a LinkedIn feed</span></div>
+  <div class="li-chrome">
+    <div class="li-topbar">
+      <div class="li-logo"><div class="li-logo-mark">in</div></div>
+      <div class="li-search">Search</div>
+      <div class="li-nav-icons">
+        <div class="li-nav-item active"><span class="li-nav-icon">🏠</span>Home</div>
+        <div class="li-nav-item"><span class="li-nav-icon">👥</span>Network</div>
+        <div class="li-nav-item"><span class="li-nav-icon">💼</span>Jobs</div>
+        <div class="li-nav-item"><span class="li-nav-icon">💬</span>Messaging</div>
+        <div class="li-nav-item"><span class="li-nav-icon">🔔</span>Notifications</div>
+      </div>
+    </div>
+    <div class="li-feed">
+      <div class="li-left-panel">
+        <div class="li-profile-card">
+          <div class="li-cover"></div>
+          <div class="li-pf-av">GY</div>
+          <div class="li-pf-name">Geetika Yadav</div>
+          <div class="li-pf-role">Communications and Content Lead &nbsp;·&nbsp; Delhi NCR</div>
+        </div>
+      </div>
+      <div class="li-feed-main">
+        <div class="li-post-card">
+          <div class="li-post-header">
+            <div class="li-post-av">GY</div>
+            <div><div class="li-post-name">Geetika Yadav</div><div class="li-post-title">Communications and Content Lead &nbsp;·&nbsp; Delhi NCR</div><div class="li-post-time">2d &nbsp;·&nbsp; 🌐</div></div>
+          </div>
+          <div class="li-post-divider"></div>
+          <div class="li-post-hook">One habit that improved every presentation I worked on</div>
+          <div class="li-post-body">Before writing a single slide, write one sentence: "After this presentation, the audience will ___."<br><br>Not "understand our Q3 results." A specific, concrete action or decision.<br><br>Most presentations are built around what the presenter knows, not what the audience needs to leave with.<br><br>Try it on your next deck. You will cut at least three slides.<br><br><span style="color:#0A66C2">#ExecutiveComms &nbsp; #Presentations &nbsp; #Storytelling</span></div>
+          <div class="li-post-actions"><span class="li-action">👍 Like</span><span class="li-action">💬 Comment</span><span class="li-action">↗ Repost</span><span class="li-action">✉ Send</span></div>
+        </div>
+        <div class="li-post-card">
+          <div class="li-post-header">
+            <div class="li-post-av">GY</div>
+            <div><div class="li-post-name">Geetika Yadav</div><div class="li-post-title">Communications and Content Lead &nbsp;·&nbsp; Delhi NCR</div><div class="li-post-time">5d &nbsp;·&nbsp; 🌐</div></div>
+          </div>
+          <div class="li-post-divider"></div>
+          <div class="li-post-hook">In communications, discipline is the creative act</div>
+          <div class="li-post-body">50+ communications. 5 channels. An awareness score of approximately 80% throughout a 12-month COVID programme.<br><br>The biggest difference-maker was not the content. It was the calendar.<br><br>Moving from 2-day to 10-day lead times gave us space for alignment, better editing, and consistent channel decisions, instead of publishing under pressure.<br><br><span style="color:#0A66C2">#ChangeManagement &nbsp; #InternalComms &nbsp; #CrisisComms</span></div>
+          <div class="li-post-actions"><span class="li-action">👍 Like</span><span class="li-action">💬 Comment</span><span class="li-action">↗ Repost</span><span class="li-action">✉ Send</span></div>
+        </div>
+      </div>
+      <div class="li-right-panel">
+        <div class="li-widget">
+          <div class="li-widget-title">Add to your feed</div>
+          <div class="li-widget-item">Communications professionals</div>
+          <div class="li-widget-item">Internal Comms Network</div>
+          <div class="li-widget-item">Change Management Hub</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end samples-wrap -->
+
+<div class="also-see">
+  <div class="also-inner">
+    <div class="also-text"><strong>Want the full project context?</strong> The projects section describes the real work behind these samples, including outcomes and what I learned.</div>
+    <a class="also-link" href="projects.html">View projects</a>
+  </div>
+</div>
+
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-kicker">Get in touch</div>
+    <h2 class="contact-title">Open to the right opportunity</h2>
+    <p class="contact-sub">Immediate joiner based in Delhi NCR, available for hybrid or on-site roles in Gurugram and Central Delhi.</p>
+    <div class="contact-meta">
+      <span>Contact:</span>
+      <a href="mailto:geetika.yadav@outlook.in">geetika.yadav@outlook.in</a>
+      <a href="tel:+919643288168">+91-9643288168</a>
+      <a href="https://linkedin.com/in/geetika-yadav-6b2753170" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-copy">© 2025 Geetika Yadav &nbsp;·&nbsp; Communications and Content Professional &nbsp;·&nbsp; Delhi NCR</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="mailto:geetika.yadav@outlook.in">Email</a>
+  </div>
+</footer>
+</body>
+</html>
