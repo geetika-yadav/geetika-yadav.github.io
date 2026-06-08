@@ -27,14 +27,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .page-sub{font-size:1rem;color:var(--ink-muted);max-width:620px;line-height:1.75}
 
 /* SAMPLE LAYOUT */
-.samples-wrap{max-width:1100px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem) 5rem}
-.sample-block{margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border)}
-.sample-block:last-child{border-bottom:none}
-.sample-meta-row{display:flex;align-items:center;gap:1rem;margin-bottom:0.6rem}
-.s-num{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted)}
+.samples-wrap{max-width:100%;padding:0}
+/* Each sample block is full-width with alternating bg */
+.sample-block{padding:4rem clamp(1.5rem,5vw,4rem)}
+.sample-block-inner{max-width:1100px;margin:0 auto}
+.sample-block:nth-child(even){background:var(--off)}
+.sample-block:nth-child(odd){background:var(--white)}
+.sample-block:first-child{border-top:none}
+/* Sample header: large number + title treatment */
+.sample-header{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.sample-num-big{font-family:'Playfair Display',serif;font-size:4rem;font-weight:700;line-height:1;color:var(--border);flex-shrink:0;width:72px;text-align:center}
+.sample-block:nth-child(odd) .sample-num-big{color:#E4E8EE}
+.sample-block:nth-child(even) .sample-num-big{color:#D8DDE5}
+.sample-header-right{}
+.sample-meta-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem}
+.s-num{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted)}
 .s-tag{font-size:0.72rem;font-weight:500;padding:3px 12px;border-radius:20px}
-.sample-title{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0.6rem}
-.sample-desc{font-size:0.95rem;color:var(--ink-muted);line-height:1.7;max-width:640px;margin-bottom:2.5rem}
+.sample-title{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0.5rem}
+.sample-desc{font-size:0.95rem;color:var(--ink-muted);line-height:1.7;max-width:680px;margin:0}
 
 /* PROCESS STEPS */
 .process-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
@@ -325,18 +335,19 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
   <p class="page-sub">Each sample shows the brief, the thinking behind the approach, and the output rendered in its actual delivery format: emails as they appear in an Outlook inbox, newsletters as they land in a mail client, slides as they look in PowerPoint, and social content as it appears on the platform.</p>
 </div>
 
-<div class="samples-wrap">
-
 <!-- ════════════════════════════════════════════
      SAMPLE 01 — WRITTEN ARTICLE
 ═════════════════════════════════════════════ -->
 <div class="sample-block" id="s1">
-  <div class="sample-meta-row">
-    <span class="s-num">Sample 01</span>
-    <span class="s-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Written article</span>
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">01</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 01</span><span class="s-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Written article</span></div>
+      <h2 class="sample-title">Communicating through a crisis: a written article</h2>
+      <p class="sample-desc">A long-form piece drawing on the COVID-19 programme experience, demonstrating how I structure written thought leadership for a professional audience.</p>
+    </div>
   </div>
-  <h2 class="sample-title">Communicating through a crisis: a written article</h2>
-  <p class="sample-desc">A long-form piece drawing on the COVID-19 programme experience, demonstrating how I structure written thought leadership for a professional audience.</p>
   <div class="process-row">
     <div class="p-step">
       <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
@@ -385,17 +396,21 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     </div>
   </div>
 </div>
+</div>
 
 <!-- ════════════════════════════════════════════
      SAMPLE 02 — NEWSLETTER IN OUTLOOK
 ═════════════════════════════════════════════ -->
 <div class="sample-block" id="s2">
-  <div class="sample-meta-row">
-    <span class="s-num">Sample 02</span>
-    <span class="s-tag" style="background:var(--sky-light);color:#1A4A7A;border:1px solid #5B8DB8">Newsletter design</span>
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">02</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 02</span><span class="s-tag" style="background:var(--sky-light);color:#1A4A7A;border:1px solid #5B8DB8">Newsletter design</span></div>
+      <h2 class="sample-title">Internal newsletter as it lands in an Outlook inbox</h2>
+      <p class="sample-desc">A designed recurring newsletter rendered exactly as it would appear when an employee opens it in Microsoft Outlook, showing editorial structure, branded layout, and content hierarchy.</p>
+    </div>
   </div>
-  <h2 class="sample-title">Internal newsletter as it lands in an Outlook inbox</h2>
-  <p class="sample-desc">A designed recurring newsletter rendered exactly as it would appear when an employee opens it in Microsoft Outlook, showing editorial structure, branded layout, and content hierarchy.</p>
   <div class="process-row">
     <div class="p-step">
       <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
@@ -503,17 +518,21 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     </div>
   </div>
 </div>
+</div>
 
 <!-- ════════════════════════════════════════════
      SAMPLE 03 — EXECUTIVE EMAIL IN OUTLOOK
 ═════════════════════════════════════════════ -->
 <div class="sample-block" id="s3">
-  <div class="sample-meta-row">
-    <span class="s-num">Sample 03</span>
-    <span class="s-tag" style="background:#EEF1F6;color:#2E4070;border:1px solid #3D5170">Executive communication</span>
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">03</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 03</span><span class="s-tag" style="background:#EEF1F6;color:#2E4070;border:1px solid #3D5170">Executive communication</span></div>
+      <h2 class="sample-title">Executive programme launch announcement as it appears in Outlook</h2>
+      <p class="sample-desc">A leadership communication from the COO announcing a major transformation programme, rendered as it would appear in an employee's Outlook inbox with full branded email template.</p>
+    </div>
   </div>
-  <h2 class="sample-title">Executive programme launch announcement as it appears in Outlook</h2>
-  <p class="sample-desc">A leadership communication from the COO announcing a major transformation programme, rendered as it would appear in an employee's Outlook inbox with full branded email template.</p>
   <div class="process-row">
     <div class="p-step">
       <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
@@ -591,17 +610,21 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     </div>
   </div>
 </div>
+</div>
 
 <!-- ════════════════════════════════════════════
      SAMPLE 04 — POWERPOINT SLIDE
 ═════════════════════════════════════════════ -->
 <div class="sample-block" id="s4">
-  <div class="sample-meta-row">
-    <span class="s-num">Sample 04</span>
-    <span class="s-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Presentation design</span>
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">04</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 04</span><span class="s-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Presentation design</span></div>
+      <h2 class="sample-title">Executive presentation slide as it appears in PowerPoint</h2>
+      <p class="sample-desc">A mid-programme progress slide from a leadership deck, shown inside the PowerPoint application interface to demonstrate how it would actually be presented to senior leadership.</p>
+    </div>
   </div>
-  <h2 class="sample-title">Executive presentation slide as it appears in PowerPoint</h2>
-  <p class="sample-desc">A mid-programme progress slide from a leadership deck, shown inside the PowerPoint application interface to demonstrate how it would actually be presented to senior leadership.</p>
   <div class="process-row">
     <div class="p-step">
       <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
@@ -786,17 +809,21 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     </div>
   </div>
 </div>
+</div>
 
 <!-- ════════════════════════════════════════════
      SAMPLE 05 — SHAREPOINT IN BROWSER
 ═════════════════════════════════════════════ -->
 <div class="sample-block" id="s5">
-  <div class="sample-meta-row">
-    <span class="s-num">Sample 05</span>
-    <span class="s-tag" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">SharePoint design</span>
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">05</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 05</span><span class="s-tag" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">SharePoint design</span></div>
+      <h2 class="sample-title">SharePoint homepage as it appears in a browser</h2>
+      <p class="sample-desc">A programme intranet homepage rendered inside a realistic browser chrome with the full SharePoint interface, showing zone architecture, navigation, and content governance in context.</p>
+    </div>
   </div>
-  <h2 class="sample-title">SharePoint homepage as it appears in a browser</h2>
-  <p class="sample-desc">A programme intranet homepage rendered inside a realistic browser chrome with the full SharePoint interface, showing zone architecture, navigation, and content governance in context.</p>
   <div class="process-row">
     <div class="p-step">
       <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
@@ -872,17 +899,21 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     </div>
   </div>
 </div>
+</div>
 
 <!-- ════════════════════════════════════════════
      SAMPLE 06 — LINKEDIN POSTS IN FEED
 ═════════════════════════════════════════════ -->
 <div class="sample-block" id="s6">
-  <div class="sample-meta-row">
-    <span class="s-num">Sample 06</span>
-    <span class="s-tag" style="background:#E8F4FB;color:#005885;border:1px solid #0077B5">Social content</span>
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">06</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 06</span><span class="s-tag" style="background:#E8F4FB;color:#005885;border:1px solid #0077B5">Social content</span></div>
+      <h2 class="sample-title">Business social content as it appears in a LinkedIn company feed</h2>
+      <p class="sample-desc">Three posts written for a business account, rendered inside a realistic LinkedIn interface. This reflects the actual nature of the work: writing in a company voice for a brand audience, not personal thought leadership. Shown as they would appear to a follower scrolling their feed.</p>
+    </div>
   </div>
-  <h2 class="sample-title">Business social content as it appears in a LinkedIn company feed</h2>
-  <p class="sample-desc">Three posts written for a business account, rendered inside a realistic LinkedIn interface. This reflects the actual nature of the work: writing in a company voice for a brand audience, not personal thought leadership. Shown as they would appear to a follower scrolling their feed.</p>
   <div class="process-row">
     <div class="p-step">
       <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
@@ -955,8 +986,7 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
     </div>
   </div>
 </div>
-
-</div><!-- end samples-wrap -->
+</div>
 
 <div class="also-see">
   <div class="also-inner">
