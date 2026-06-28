@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1A1F2E;--ink-mid:#3D4A5C;--ink-muted:#6B7A8D;--navy:#1B2A4A;--navy-mid:#243355;--sky:#3A6EA8;--sky-light:#EBF3FB;--gold:#C8922A;--gold-bg:#FBF5EA;--white:#FFFFFF;--off:#F7F8FA;--border:#E4E8EE;--green:#1F7A5C;--green-bg:#EAF5F0;}
+:root{--ink:#1A1F2E;--ink-mid:#3D4A5C;--ink-muted:#6B7A8D;--navy:#1B2A4A;--navy-mid:#243355;--sky:#3A6EA8;--sky-light:#EBF3FB;--gold:#C8922A;--gold-bg:#FBF5EA;--white:#FFFFFF;--off:#F7F8FA;--border:#E4E8EE;--green:#1F7A5C;--green-bg:#EAF5F0;--teal:#1C7293;--teal-bg:#E8F1F4;--aqua-navy:#16284A;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden}
@@ -55,6 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .output-divider{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
 .output-divider::before,.output-divider::after{content:'';flex:1;height:1px;background:var(--border)}
 .output-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.sample-disclaimer{font-size:0.78rem;color:var(--ink-muted);font-style:italic;margin-top:1.25rem;text-align:center}
 
 /* ── OUTLOOK EMAIL CHROME ── */
 .outlook-chrome{background:#F3F2F1;border:1px solid #D2D0CE;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1)}
@@ -293,6 +294,45 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .a-callout-sub{font-size:0.85rem;color:var(--ink-muted);margin-top:2px}
 .a-tags{font-size:0.8rem;color:var(--sky);margin-top:1.5rem}
 
+/* ── LUXURY STRATEGY DECK (dark) ── */
+.lux-slide{background:#0E1A2E;border-radius:4px;overflow:hidden;aspect-ratio:16/9;display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 2px 12px rgba(0,0,0,0.25);border:1px solid #1F3050;font-family:'DM Sans',sans-serif}
+.lux-band{padding:clamp(8px,1.3vw,16px) clamp(14px,2.2vw,26px) clamp(5px,0.7vw,9px)}
+.lux-eyebrow{font-size:clamp(6px,0.65vw,9px);font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(3px,0.45vw,6px)}
+.lux-headline{font-family:'Playfair Display',serif;font-size:clamp(10px,1.25vw,16px);font-weight:700;color:#F4F0E8;line-height:1.3}
+.lux-body{padding:clamp(8px,1.4vw,20px) clamp(14px,2.2vw,26px);display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(12px,2vw,28px);align-items:center;align-content:center}
+.lux-bars{display:flex;flex-direction:column;gap:clamp(4px,0.6vw,9px)}
+.lux-bar-row{display:grid;grid-template-columns:clamp(70px,11vw,150px) 1fr clamp(20px,2.6vw,34px);align-items:center;gap:clamp(5px,0.7vw,10px)}
+.lux-bar-label{font-size:clamp(6.5px,0.68vw,9.5px);color:#B8C4D4;text-align:right;line-height:1.2}
+.lux-bar-track{background:rgba(255,255,255,0.06);border-radius:20px;height:clamp(7px,0.95vw,13px);overflow:hidden}
+.lux-bar-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#C8922A,#E3B65C)}
+.lux-bar-fill.muted{background:rgba(200,146,42,0.4)}
+.lux-bar-val{font-size:clamp(7px,0.75vw,10.5px);font-weight:700;color:var(--gold)}
+.lux-implication{border-left:2px solid var(--gold);padding-left:clamp(8px,1.1vw,15px)}
+.lux-imp-label{font-size:clamp(6px,0.62vw,8.5px);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(3px,0.4vw,6px)}
+.lux-imp-title{font-family:'Playfair Display',serif;font-size:clamp(9px,1vw,14px);font-style:italic;color:#F4F0E8;margin-bottom:clamp(3px,0.4vw,6px);line-height:1.3}
+.lux-imp-text{font-size:clamp(6.5px,0.68vw,9.5px);color:#B8C4D4;line-height:1.6}
+.lux-foot{padding:clamp(4px,0.55vw,7px) clamp(14px,2.2vw,26px);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06)}
+.lux-foot-text{font-size:clamp(5.5px,0.58vw,8px);color:#6B7A8D;letter-spacing:0.05em}
+
+/* ── AQUAFORWARD CSR DECK (light, teal/navy) ── */
+.aqua-slide{background:#FFFFFF;border-radius:4px;overflow:hidden;aspect-ratio:16/9;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.15);border:1px solid #E0E0E0;font-family:'DM Sans',sans-serif;padding:clamp(12px,2vw,26px) clamp(14px,2.4vw,30px)}
+.aqua-num{font-family:'Playfair Display',serif;font-size:clamp(11px,1.3vw,17px);font-weight:700;color:#C3D2DC}
+.aqua-title{font-family:'Playfair Display',serif;font-size:clamp(13px,1.7vw,23px);font-weight:700;color:var(--aqua-navy);line-height:1.1;margin-bottom:clamp(6px,1vw,13px)}
+.aqua-intro{font-size:clamp(6.5px,0.72vw,10px);color:#3D4A5C;line-height:1.65;margin-bottom:clamp(7px,1.1vw,15px);max-width:95%}
+.aqua-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(6px,1vw,13px);margin-bottom:clamp(8px,1.2vw,16px)}
+.aqua-kpi{background:var(--teal-bg);border-radius:6px;padding:clamp(7px,1vw,14px);text-align:center}
+.aqua-kpi-n{font-family:'Playfair Display',serif;font-size:clamp(15px,1.9vw,26px);font-weight:700;color:var(--teal);line-height:1}
+.aqua-kpi-l{font-size:clamp(6px,0.62vw,8.5px);color:#6B7A8D;margin-top:clamp(2px,0.3vw,4px)}
+.aqua-obj-title{font-family:'Playfair Display',serif;font-size:clamp(8.5px,1vw,14px);font-weight:700;color:var(--aqua-navy);margin-bottom:clamp(5px,0.7vw,9px)}
+.aqua-obj-list{display:flex;flex-direction:column;gap:clamp(5px,0.8vw,11px)}
+.aqua-obj{display:flex;align-items:flex-start;gap:clamp(7px,1vw,13px)}
+.aqua-obj-icon{width:clamp(18px,2.4vw,32px);height:clamp(18px,2.4vw,32px);border-radius:50%;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal)}
+.aqua-obj-icon svg{width:55%;height:55%}
+.aqua-obj-text-t{font-size:clamp(7px,0.78vw,11px);font-weight:600;color:var(--aqua-navy);line-height:1.2;margin-bottom:1px}
+.aqua-obj-text-b{font-size:clamp(6px,0.66vw,9px);color:#6B7A8D;line-height:1.45}
+.aqua-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:clamp(5px,0.8vw,10px)}
+.aqua-foot-text{font-size:clamp(5.5px,0.58vw,8px);color:#9BA8B5}
+
 /* CONTACT / FOOTER */
 .contact-section{background:var(--navy);padding:3.5rem clamp(1.5rem,5vw,4rem)}
 .contact-inner{max-width:640px;margin:0 auto;text-align:center}
@@ -333,7 +373,7 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
 <div class="page-hero">
   <div class="page-eyebrow">Work Samples</div>
   <h1 class="page-title">How I approach the work</h1>
-  <p class="page-sub">Each sample shows the brief, the thinking behind the approach, and the finished output. The focus is on how I structure, design, and produce communications across different formats and channels.</p>
+  <p class="page-sub">Each sample shows the brief, the thinking behind the approach, and the finished output, spanning internal communications, editorial design, executive presentations, and strategy decks. The focus is on how I structure, design, and produce communications across different formats and channels. Presentation samples are original, illustrative work created for this portfolio, not client material.</p>
 </div>
 
 <!-- ════════════════════════════════════════════
@@ -987,6 +1027,237 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
   </div>
 </div>
 </div>
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 07 — LUXURY STRATEGY DECK (PowerPoint)
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s7">
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">07</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 07</span><span class="s-tag" style="background:var(--gold-bg);color:#7A5200;border:1px solid #E8B84B">Strategy presentation</span></div>
+      <h2 class="sample-title">Executive strategy deck: defending premium leadership</h2>
+      <p class="sample-desc">A slide from a board-level strategy review for a premium consumer brand facing margin erosion. Demonstrates how I build an argument across a deck: diagnosing the problem, ranking the drivers, and landing a single clear implication for the leadership team. The featured slide draws its data from primary research in my MBA thesis.</p>
+    </div>
+  </div>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">Make the case to leadership that defending a premium position is about brand discipline, not a price response. The deck has to move a sceptical executive audience from diagnosis to a clear strategic implication.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Each slide makes one point in its headline, then proves it. This slide ranks the drivers of brand growth from research, so the recommendation rests on evidence rather than opinion. The implication is stated, not implied.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">A dark, restrained palette signals a premium, board-level register. A single indexed bar chart carries the argument; the implication panel translates data into a decision. No clutter competing with the one idea.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output</span></div>
+  <div class="ppt-chrome">
+    <div class="ppt-titlebar">
+      <div class="ppt-titlebar-left">
+        <div class="ppt-winctrls"><div class="ppt-ctrl" style="background:#FF5F57"></div><div class="ppt-ctrl" style="background:#FFBD2E"></div><div class="ppt-ctrl" style="background:#28C840"></div></div>
+        <div class="ppt-app-icon">P</div>
+        <div class="ppt-filename">Premium_Strategy_Review_Q3.pptx — PowerPoint</div>
+      </div>
+    </div>
+    <div class="ppt-ribbon">
+      <div class="ppt-ribbon-tabs">
+        <div class="ppt-tab active">Home</div>
+        <div class="ppt-tab">Insert</div>
+        <div class="ppt-tab">Design</div>
+        <div class="ppt-tab">Transitions</div>
+        <div class="ppt-tab">Animations</div>
+        <div class="ppt-tab">Slide Show</div>
+      </div>
+      <div class="ppt-ribbon-tools">
+        <div class="ppt-tool">New Slide</div>
+        <div class="ppt-tool">Layout</div>
+        <div class="ppt-tool">Text Box</div>
+        <div class="ppt-tool">Shapes</div>
+      </div>
+    </div>
+    <div class="ppt-workspace">
+      <div class="ppt-slides-panel">
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">1</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">2</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">3</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">4</span></div></div>
+        <div class="ppt-thumb active"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">5</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">6</span></div></div>
+      </div>
+      <div class="ppt-slide-area">
+        <div class="lux-slide">
+          <div class="lux-band">
+            <div class="lux-eyebrow">Strategy Review &nbsp;·&nbsp; Global Premium Brand &nbsp;·&nbsp; Q3</div>
+            <div class="lux-headline">Brand identity and consistency outweigh spend as drivers of engagement for emerging businesses</div>
+          </div>
+          <div class="lux-body">
+            <div class="lux-bars">
+              <div class="lux-bar-row">
+                <div class="lux-bar-label">Visual identity &amp; consistency</div>
+                <div class="lux-bar-track"><div class="lux-bar-fill" style="width:100%"></div></div>
+                <div class="lux-bar-val">100</div>
+              </div>
+              <div class="lux-bar-row">
+                <div class="lux-bar-label">Owned-channel branding</div>
+                <div class="lux-bar-track"><div class="lux-bar-fill" style="width:92%"></div></div>
+                <div class="lux-bar-val">92</div>
+              </div>
+              <div class="lux-bar-row">
+                <div class="lux-bar-label">User-generated content</div>
+                <div class="lux-bar-track"><div class="lux-bar-fill" style="width:84%"></div></div>
+                <div class="lux-bar-val">84</div>
+              </div>
+              <div class="lux-bar-row">
+                <div class="lux-bar-label">Community building</div>
+                <div class="lux-bar-track"><div class="lux-bar-fill muted" style="width:78%"></div></div>
+                <div class="lux-bar-val">78</div>
+              </div>
+              <div class="lux-bar-row">
+                <div class="lux-bar-label">Storytelling &amp; narrative</div>
+                <div class="lux-bar-track"><div class="lux-bar-fill muted" style="width:71%"></div></div>
+                <div class="lux-bar-val">71</div>
+              </div>
+              <div class="lux-bar-row">
+                <div class="lux-bar-label">Influencer reach</div>
+                <div class="lux-bar-track"><div class="lux-bar-fill muted" style="width:58%"></div></div>
+                <div class="lux-bar-val">58</div>
+              </div>
+            </div>
+            <div class="lux-implication">
+              <div class="lux-imp-label">Implication</div>
+              <div class="lux-imp-title">Identity beats budget.</div>
+              <div class="lux-imp-text">The top drivers are disciplines a small brand can own without outspending incumbents. Growth follows consistency and trust, not media weight.</div>
+            </div>
+          </div>
+          <div class="lux-foot">
+            <div class="lux-foot-text">Relative strength of brand-growth drivers (indexed, 100 = strongest)</div>
+            <div class="lux-foot-text">Illustrative sample · original work, not client material</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ppt-statusbar">
+      <div class="ppt-status-text">Slide 5 of 6 &nbsp;·&nbsp; Normal View</div>
+      <div class="ppt-status-text">100%</div>
+    </div>
+  </div>
+  <p class="sample-disclaimer">Illustrative sample, original work created for this portfolio, not client material. Indexed figures drawn from primary research conducted for my MBA thesis (IU International University, 2024).</p>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SAMPLE 08 — AQUAFORWARD CSR PROPOSAL (PowerPoint)
+═════════════════════════════════════════════ -->
+<div class="sample-block" id="s8">
+  <div class="sample-block-inner">
+  <div class="sample-header">
+    <div class="sample-num-big">08</div>
+    <div class="sample-header-right">
+      <div class="sample-meta-row"><span class="s-num">Sample 08</span><span class="s-tag" style="background:var(--teal-bg);color:#0F5468;border:1px solid #6BB0C4">Proposal design</span></div>
+      <h2 class="sample-title">CSR proposal: a clean-water access initiative</h2>
+      <p class="sample-desc">An executive summary slide from a fictional six-page corporate social responsibility proposal. Demonstrates how I structure a persuasive B2B document: leading with the problem and the impact, then building the case for delivery, governance, and investment across the pages that follow.</p>
+    </div>
+  </div>
+  <div class="process-row">
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--gold-bg);color:var(--gold);border:1px solid #E8B84B">1</div>
+      <div class="p-step-label">The brief</div>
+      <div class="p-step-text">Produce a board-ready CSR proposal that a development board could act on: clear impact, credible delivery plan, transparent governance, and a defensible budget, all in a document that reads as trustworthy from the first page.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--sky-light);color:var(--sky);border:1px solid #5B8DB8">2</div>
+      <div class="p-step-label">The approach</div>
+      <div class="p-step-text">Open with the human scale of the problem and the headline numbers, then commit to specific, measurable objectives. The full document moves from impact, to why-us, to phased approach, to investment and timeline, so the reader builds confidence in order.</div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num" style="background:var(--green-bg);color:var(--green);border:1px solid #2ECC9A">3</div>
+      <div class="p-step-label">Format decision</div>
+      <div class="p-step-text">A calm navy-and-teal palette with a water motif suits the subject and the audience. KPI cards make impact scannable; iconed objectives keep the commitments concrete rather than abstract. Restrained, document-grade design throughout.</div>
+    </div>
+  </div>
+  <div class="output-divider"><span class="output-label">Output</span></div>
+  <div class="ppt-chrome">
+    <div class="ppt-titlebar">
+      <div class="ppt-titlebar-left">
+        <div class="ppt-winctrls"><div class="ppt-ctrl" style="background:#FF5F57"></div><div class="ppt-ctrl" style="background:#FFBD2E"></div><div class="ppt-ctrl" style="background:#28C840"></div></div>
+        <div class="ppt-app-icon">P</div>
+        <div class="ppt-filename">AquaForward_CSR_Proposal.pptx — PowerPoint</div>
+      </div>
+    </div>
+    <div class="ppt-ribbon">
+      <div class="ppt-ribbon-tabs">
+        <div class="ppt-tab active">Home</div>
+        <div class="ppt-tab">Insert</div>
+        <div class="ppt-tab">Design</div>
+        <div class="ppt-tab">Transitions</div>
+        <div class="ppt-tab">Animations</div>
+        <div class="ppt-tab">Slide Show</div>
+      </div>
+      <div class="ppt-ribbon-tools">
+        <div class="ppt-tool">New Slide</div>
+        <div class="ppt-tool">Layout</div>
+        <div class="ppt-tool">Text Box</div>
+        <div class="ppt-tool">Shapes</div>
+      </div>
+    </div>
+    <div class="ppt-workspace">
+      <div class="ppt-slides-panel">
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">1</span></div></div>
+        <div class="ppt-thumb active"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">2</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">3</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">4</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">5</span></div></div>
+        <div class="ppt-thumb"><div class="ppt-thumb-inner"><span class="ppt-thumb-num">6</span></div></div>
+      </div>
+      <div class="ppt-slide-area">
+        <div class="aqua-slide">
+          <div class="aqua-num">01</div>
+          <div class="aqua-title">Executive Summary</div>
+          <div class="aqua-intro">Across the districts served by the Regional Community Development Board, an estimated 42,000 residents rely on water sources that do not meet basic safety standards. AquaForward is a 12-month initiative to install and maintain community water filtration points, train local stewards, and build lasting awareness around water safety.</div>
+          <div class="aqua-kpis">
+            <div class="aqua-kpi"><div class="aqua-kpi-n">42,000+</div><div class="aqua-kpi-l">Residents reached</div></div>
+            <div class="aqua-kpi"><div class="aqua-kpi-n">18</div><div class="aqua-kpi-l">Communities served</div></div>
+            <div class="aqua-kpi"><div class="aqua-kpi-n">12 mo.</div><div class="aqua-kpi-l">Programme duration</div></div>
+          </div>
+          <div class="aqua-obj-title">Programme Objectives</div>
+          <div class="aqua-obj-list">
+            <div class="aqua-obj">
+              <div class="aqua-obj-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-3 4-6 7.5-6 11a6 6 0 0 0 12 0c0-3.5-3-7-6-11z"/></svg></div>
+              <div><div class="aqua-obj-text-t">Safe Water Access</div><div class="aqua-obj-text-b">Install 18 community filtration points across underserved districts.</div></div>
+            </div>
+            <div class="aqua-obj">
+              <div class="aqua-obj-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+              <div><div class="aqua-obj-text-t">Local Capacity Building</div><div class="aqua-obj-text-b">Train 60 community stewards in filtration upkeep and water testing.</div></div>
+            </div>
+            <div class="aqua-obj">
+              <div class="aqua-obj-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 14.2a7.2 7.2 0 0 1-5.4-2.45c.03-1.8 3.6-2.78 5.4-2.78s5.37.98 5.4 2.78A7.2 7.2 0 0 1 12 19.2z"/></svg></div>
+              <div><div class="aqua-obj-text-t">Health Partnership</div><div class="aqua-obj-text-b">Coordinate with regional health authorities on monitoring and reporting.</div></div>
+            </div>
+          </div>
+          <div class="aqua-foot">
+            <div class="aqua-foot-text">AquaForward Proposal</div>
+            <div class="aqua-foot-text">Sample document · original fictional content created for portfolio purposes · Page 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ppt-statusbar">
+      <div class="ppt-status-text">Slide 2 of 6 &nbsp;·&nbsp; Normal View</div>
+      <div class="ppt-status-text">100%</div>
+    </div>
+  </div>
+  <p class="sample-disclaimer">Sample document, original fictional content created for this portfolio. Organisation, figures, and contact details are illustrative and do not represent any real entity.</p>
+</div>
+</div>
+
 
 <div class="also-see">
   <div class="also-inner">
