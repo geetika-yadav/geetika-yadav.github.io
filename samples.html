@@ -56,6 +56,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .output-divider::before,.output-divider::after{content:'';flex:1;height:1px;background:var(--border)}
 .output-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
 .sample-disclaimer{font-size:0.78rem;color:var(--ink-muted);font-style:italic;margin-top:1.25rem;text-align:center}
+.sample-pdf-row{display:flex;flex-direction:column;align-items:center;margin-top:1rem}
+.sample-pdf-link{display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:500;color:var(--navy);text-decoration:none;border:1.5px solid var(--border);padding:0.6rem 1.4rem;border-radius:4px;transition:border-color .2s,background .2s,color .2s}
+.sample-pdf-link:hover{border-color:var(--navy);background:var(--navy);color:var(--white)}
+.sample-pdf-link svg{width:15px;height:15px;flex-shrink:0}
+.sample-pdf-note{font-size:0.78rem;color:var(--ink-muted);margin-top:0.6rem}
 
 /* ── OUTLOOK EMAIL CHROME ── */
 .outlook-chrome{background:#F3F2F1;border:1px solid #D2D0CE;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1)}
@@ -1149,6 +1154,13 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
       <div class="ppt-status-text">100%</div>
     </div>
   </div>
+  <div class="sample-pdf-row">
+    <a class="sample-pdf-link" href="strategy-review-sample.pdf" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      View the full deck (6-slide PDF)
+    </a>
+    <div class="sample-pdf-note">Opens in a new tab. The slide above is page 5 of 6.</div>
+  </div>
   <p class="sample-disclaimer">Illustrative sample, original work created for this portfolio, not client material. Indexed figures drawn from primary research conducted for my MBA thesis (IU International University, 2024).</p>
 </div>
 </div>
@@ -1253,6 +1265,13 @@ footer{background:#111823;padding:1.25rem clamp(1.5rem,5vw,4rem);display:flex;ju
       <div class="ppt-status-text">Slide 2 of 6 &nbsp;·&nbsp; Normal View</div>
       <div class="ppt-status-text">100%</div>
     </div>
+  </div>
+  <div class="sample-pdf-row">
+    <a class="sample-pdf-link" href="aquaforward-csr-proposal.pdf" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      View the full proposal (6-page PDF)
+    </a>
+    <div class="sample-pdf-note">Opens in a new tab. The slide above is page 2 of 6.</div>
   </div>
   <p class="sample-disclaimer">Sample document, original fictional content created for this portfolio. Organisation, figures, and contact details are illustrative and do not represent any real entity.</p>
 </div>
